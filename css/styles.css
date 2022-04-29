@@ -1,4 +1,51 @@
-body
-{
-  font-size: 40pt;
+* {
+  padding: .1vmin .1vmin;
+  margin: .1vmin .1vmin;
+  background-color: black;
+  color: white;
+
+}
+div {
+  display: flex;
+  justify-content: space-around;
+  width: 100vw;
+  height: calc(100vh - 0.5vmin);
+}
+div>div{
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+textarea, textarea:focus{
+  border-radius: 2vmin;
+  margin: .25vmin .25vmin;
+  padding: .5vmin .5vmin;
+  width: calc(100% - 1.75vmin);
+  height: calc(100% / 3);
+  font-weight: 700;
+  
+    font-family: "roboto","Helvetica Neue",Helvetica,Arial,sans-serif; /* make your choice */
+    font-size: 2.5vmin;
+    background: transparent;
+    overflow: hidden;
+    -webkit-appearance: none;
+    -webkit-box-shadow: none;
+    -moz-apperarance: none;
+    -moz-box-shadow: none;
+    -ms-appearance: none;
+    -ms-box-shadow: none;
+    -o-appearance: none;
+    -o-box-shadow: none;
+    appearance: none;
+    box-shadow: none;
+    outline: none;
+    resize: none;
+}
+iframe {
+  border-radius: 2.5vmin;
+  margin: .25vmin .25vmin;
+  padding: .125vmin .125vmin;
+  width: calc(100% - 2vmin);
+  height: calc(100% - .5vmin);
+  background: white;
+  color: black;
 }
