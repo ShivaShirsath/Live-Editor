@@ -1,8 +1,8 @@
 # Live-Editor
 HTML, CSS, JavaScript
 
-<a href=https://ShivaShirsath.github.io/Live-Editor>
-  <h1 align=center>
+<h1 align=center>
+  <a href=https://ShivaShirsath.github.io/Live-Editor>
     ぷ
-  </h1>
-</a>
+  </a>
+</h1>
