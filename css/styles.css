@@ -1,9 +1,6 @@
 * {
   padding: .1vmin .1vmin;
   margin: .1vmin .1vmin;
-  background-color: black;
-  color: white;
-
 }
 div {
   display: flex;
