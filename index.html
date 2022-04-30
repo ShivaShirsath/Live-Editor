@@ -1,22 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <link rel="stylesheet" href="css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Live Editor</title>
+
+    <link rel="stylesheet" href="static/css/main-dark-codemirror.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script type="text/javascript" src="static/js/codemirror.js"></script>
+    <script type="text/javascript" src="static/js/xml.js"></script>
+    <script type="text/javascript" src="static/js/css.js"></script>
+    <script type="text/javascript" src="static/js/javascript.js"></script>
 </head>
 
-<body onload="run()">
-  <div>
-    <div>
-      <textarea placeholder="HTML"></textarea>
-      <textarea placeholder="css"></textarea>
-      <textarea placeholder="JavaScript"></textarea>
-    </div>
-    <div>
-      <iframe></iframe>
-    </div>
-  </div>
-  <script src="js/scripts.js"></script>
+<body>
+    <row>
+        <column>
+            <html-code onkeyup="view()"></html-code>
+            <css-code onkeyup="view()"></css-code>
+            <js-code onkeyup="view()"></js-code>
+        </column>
+        <column>
+            <iframe>
+            </iframe>
+        </column>
+    </row>
+    <script src="js/scripts.js"></script>
 </body>
 
 </html>

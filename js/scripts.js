@@ -1,16 +1,30 @@
-page = (document.getElementsByTagName('iframe')[0])
-page.contentWindow.document
-    .write(
-        '<style>' +
-        (
-            document.getElementsByTagName('textarea')[1]
-        ).value +
-        '</style>' +
-        (
-            document.getElementsByTagName('textarea')[0]
-        ).value
-    )
-    page.contentWindow.eval(
-        (
-            document.getElementsByTagName('textarea')[2]
-        ).value )
+const html = CodeMirror(document.querySelector("html-code"), {
+    lineNumbers: true,
+    tabSize: 2,
+    mode: "xml",
+});
+const css = CodeMirror(document.querySelector("css-code"), {
+    lineNumbers: true,
+    tabSize: 2,
+    mode: "css"
+});
+const js = CodeMirror(document.querySelector("js-code"), {
+    lineNumbers: true,
+    tabSize: 2,
+    mode: "javascript"
+});
+
+function view() {
+    let view = document.querySelector("iframe").contentWindow.document;
+    view.open();
+    view.write(
+        "<style>" +
+        css.getValue() +
+        "</style>" +
+        html.getValue() +
+        "<scr" + "ipt>" +
+        js.getValue() +
+        "</scr" + "ipt>"
+    );
+    view.close();
+}
