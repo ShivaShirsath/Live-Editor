@@ -27,3 +27,31 @@ iframe {
     background: white;
     color: black;
 }
+
+html-code,
+html-code:focus,
+css-code,
+css-code:focus,
+js-code,
+js-code:focus {
+    margin: .25vmin .25vmin;
+    padding: .5vmin .5vmin;
+    width: calc(100% - 2vmin);
+    height: calc(100% *.32);
+    font-size: 2.5vmin;
+    cursor: 2.5vmin;
+    background: transparent;
+    overflow: hidden;
+    -webkit-appearance: none;
+    -webkit-box-shadow: none;
+    -moz-apperarance: none;
+    -moz-box-shadow: none;
+    -ms-appearance: none;
+    -ms-box-shadow: none;
+    -o-appearance: none;
+    -o-box-shadow: none;
+    appearance: none;
+    box-shadow: none;
+    outline: none;
+    resize: none;
+}
