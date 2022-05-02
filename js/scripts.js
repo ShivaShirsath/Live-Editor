@@ -23,12 +23,12 @@ const js = CodeMirror(document.querySelector("js-code"), {
   autoCloseBrackets: true,
 });
 
-width = document.querySelector("html").offsetHeight;
-height = document. querySelector("html").offsetHeight;
+width = document.querySelector("html").offsetWidth;
+height = document.querySelector("html").offsetHeight;
 
-html.setSize(width * 0.5, height * 0.33);
-css.setSize(width * 0.5, height * 0.33);
-js.setSize(width * 0.5, height * 0.33);
+html.setSize(width *.49, height *.32);
+css.setSize(width *.49, height *.32);
+js.setSize(width *.49, height *.32);
 
 function view() {
   let view = document.querySelector("iframe").contentWindow.document;

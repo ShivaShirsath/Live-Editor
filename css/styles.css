@@ -1,6 +1,6 @@
 * {
-    padding: .1vmin .1vmin;
-    margin: .1vmin .1vmin;
+    padding: 0 0;
+    margin: 0 0;
 }
 
 row {
@@ -13,9 +13,9 @@ row {
 column {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    width: calc(100%);
-    height: calc(100%);
+    justify-content: space-evenly;
+    width: calc(100% - .5vmin);
+    height: calc(100% - .5vmin);
 }
 
 iframe {
@@ -34,13 +34,12 @@ css-code,
 css-code:focus,
 js-code,
 js-code:focus {
-    cursor: 2.5vmin;
-    border-radius: 2vmin;
     margin: .25vmin .25vmin;
     padding: .5vmin .5vmin;
-    width: calc(100% - 1.75vmin);
-    height: calc(100% / 3);
+    width: calc(100% - 2vmin);
+    height: calc(100% *.32);
     font-size: 2.5vmin;
+    cursor: 2.5vmin;
     background: transparent;
     overflow: hidden;
     -webkit-appearance: none;
