@@ -23,8 +23,8 @@ const js = CodeMirror(document.querySelector("js-code"), {
   autoCloseBrackets: true,
 });
 
-width = document.offsetHeight;
-height = document.offsetHeight;
+width = document.querySelector("html").offsetHeight;
+height = document. querySelector("html").offsetHeight;
 
 html.setSize(width * 0.5, height * 0.33);
 css.setSize(width * 0.5, height * 0.33);
