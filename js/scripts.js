@@ -42,14 +42,14 @@ function view() {
       html.setValue(html.getValue().replace("<!-- save -->",''));
       $.ajax({
         method: "POST",
-        url: "../php/code.php",
+        url: "php/code.php",
         data: { 
             html: html.getValue(),
             css: css.getValue(),
             js: js.getValue()
         }
       }).done(function( response ) {
-        $("iframe").html(response);
+        alert(response);
       });
   }
   
