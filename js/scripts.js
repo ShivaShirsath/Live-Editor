@@ -42,7 +42,7 @@ function view() {
       html.setValue(html.getValue().replace("<!-- save -->",''));
       $.ajax({
         method: "POST",
-        url: "code.php",
+        url: "../php/code.php",
         data: { 
             html: html.getValue(),
             css: css.getValue(),
