@@ -38,8 +38,19 @@ function view() {
       "<body"   + ">" + html.getValue() + "</body"   + ">" +
       "<script" + ">" +   js.getValue() + "</script" + ">"
   );
-  if (view.body.innerHTML.includes("<!-- save -->")) {
-      alert(view.body.innerHTML.replace("<!-- save -->",''));
+  if (html.getValue().includes("<!-- save -->")) {
+      html.setValue(html.getValue().replace("<!-- save -->",''));
+      $.ajax({
+        method: "POST",
+        url: "code.php",
+        data: { 
+            html: html.getValue(),
+            css: css.getValue(),
+            js: js.getValue()
+        }
+      }).done(function( response ) {
+        $("iframe").html(response);
+      });
   }
   
   view.close();
