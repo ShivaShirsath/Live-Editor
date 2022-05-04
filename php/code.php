@@ -21,7 +21,7 @@
   $result = mysqli_query($conn, $sql);
 
   if ($result) {
-    echo "<scri" . "pt>alert('Inserted');</scri" . "pt>";
+    echo "Inserted";
   } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
   }
