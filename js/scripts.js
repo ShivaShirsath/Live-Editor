@@ -34,15 +34,13 @@ function view() {
   let view = document.querySelector("iframe").contentWindow.document;
   view.open();
   view.write(
-    "<style>" +
-      css.getValue() +
-      "</style>" +
-      html.getValue() +
-      "<scr" +
-      "ipt>" +
-      js.getValue() +
-      "</scr" +
-      "ipt>"
+      "<style"  + ">" +  css.getValue() + "</style"  + ">" +
+      "<body"   + ">" + html.getValue() + "</body"   + ">" +
+      "<script" + ">" +   js.getValue() + "</script" + ">"
   );
+  if (view.body.innerHTML.includes("<!-- save -->")) {
+      alert(view.body.innerHTML.replace("<!-- save -->",''));
+  }
+  
   view.close();
 }
