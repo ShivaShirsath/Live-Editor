@@ -1,6 +1,6 @@
 const html = CodeMirror(document.querySelector("html-code"), {
   lineNumbers: true,
-  theme: "dracula",
+  theme: "darcula",
   tabSize: 2,
   mode: "xml",
   autoCloseTags: true,
@@ -8,7 +8,7 @@ const html = CodeMirror(document.querySelector("html-code"), {
 });
 const css = CodeMirror(document.querySelector("css-code"), {
   lineNumbers: true,
-  theme: "dracula",
+  theme: "darcula",
   tabSize: 2,
   mode: "css",
   autoCloseTags: true,
@@ -16,7 +16,7 @@ const css = CodeMirror(document.querySelector("css-code"), {
 });
 const js = CodeMirror(document.querySelector("js-code"), {
   lineNumbers: true,
-  theme: "dracula",
+  theme: "darcula",
   tabSize: 2,
   mode: "javascript",
   autoCloseTags: true,
