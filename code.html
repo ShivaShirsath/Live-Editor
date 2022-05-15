@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, height:device-height initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+      <title>Live Editor</title>
+
+      <link rel="stylesheet" href="codemirror/lib/codemirror.css">
+      <link rel="stylesheet" href="codemirror/theme/darcula.css">
+      <link rel="stylesheet" href="css/styles.css">
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+      <script type="text/javascript" src="codemirror/lib/codemirror.js"></script>
+      <script type="text/javascript" src="codemirror/mode/xml/xml.js"></script>
+      <script type="text/javascript" src="codemirror/mode/css/css.js"></script>
+      <script type="text/javascript" src="codemirror/mode/javascript/javascript.js"></script>
+
+      <script type="text/javascript" src="codemirror/addon/edit/closebrackets.js"></script>
+      <script type="text/javascript" src="codemirror/addon/edit/closetag.js"></script>
+      <script type="text/javascript" src="codemirror/addon/edit/continuelist.js"></script>
+      <script type="text/javascript" src="codemirror/addon/edit/matchbrackets.js"></script>
+      <script type="text/javascript" src="codemirror/addon/edit/matchtags.js"></script>
+      <script type="text/javascript" src="codemirror/addon/edit/trailingspace.js"></script>
+  
+    </head>
+  <body>
+    <stator>
+      <rotor>
+        <html-code onkeyup="view()"></html-code>
+        <css-code onkeyup="view()"></css-code>
+        <js-code onkeyup="view()"></js-code>
+      </rotor>
+      <rotor>
+        <iframe></iframe>
+      </rotor>
+    </stator>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
