@@ -5,6 +5,10 @@
   $html = $_POST[$col0];
   $css = $_POST[$col1];
   $js = $_POST[$col2];
+  
+  $command = $_POST['command'];
+  $id = $_POST['id'];
+  
   $server = "localhost";
   $user = "root";
   $pass = "";
@@ -17,22 +21,29 @@
     die("Connection failed: " . mysqli_connect_error());
   }
 
-  $sql = "INSERT INTO $table ($col0, $col1, $col2) VALUES ('$html', '$css', '$js')";
+  if ($command == "insert"){
+    $sql = "INSERT INTO $table ($col0, $col1, $col2) VALUES ('$html', '$css', '$js')";
+  }
+   
+  if ($command == "fetch"){
+    $sql = "SELECT * FROM $table WHERE id=" . $id;
+  }  
+  
   $result = mysqli_query($conn, $sql);
 
   if ($result) {
-    echo "Inserted";
+    echo "Inserted $result !";
   } else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    echo "Error: " . mysqli_error($conn);
   }
-  /*
+  
   if (mysqli_num_rows($result) > 0) {
     while($row = mysqli_fetch_assoc($result)) {
-      echo "HTML<br>" . $row[$col0]. "<br>CSS<br>" . $row[$col1]. "<br>JavaScript<br>" . $row[$col2]. "<br>";
+      echo "id : " . $id . "<br>HTML<br>" . $row[$col0]. "<br>CSS<br>" . $row[$col1]. "<br>JavaScript<br>" . $row[$col2]. "<br>";
     }
   } else {
     echo "0 results";
-  }
-  */
+  } 
+  
   mysqli_close($conn);
 ?>
