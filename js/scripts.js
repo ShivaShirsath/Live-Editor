@@ -70,7 +70,8 @@ function saveAction(code, comment, ex){
       data: { 
         html: html.getValue(),
         css: css.getValue(),
-        js: js.getValue()
+        js: js.getValue(),
+        command: 'insert'
       }
     }).done(function(response) {
       alert(response);
