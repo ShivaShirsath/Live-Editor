@@ -32,8 +32,12 @@ iframe {
   border: 0.1vmin solid orange;
 }
 
-html-code, css-code, js-code,
-html-code:focus, css-code:focus, js-code:focus {
+html-code,
+css-code,
+js-code,
+html-code:focus,
+css-code:focus,
+js-code:focus {
   font-size: 5vmin;
   cursor: 5vmin;
   background: transparent;
@@ -46,12 +50,18 @@ html-code:focus, css-code:focus, js-code:focus {
   stator {
     flex-direction: column;
   }
+
   rotor {
     flex-direction: column;
-    
+
   }
-  html-code, css-code, js-code,
-  html-code:focus, css-code:focus, js-code:focus {
+
+  html-code,
+  css-code,
+  js-code,
+  html-code:focus,
+  css-code:focus,
+  js-code:focus {
     width: 100%;
     height: calc(98% * .333);
   }
@@ -61,11 +71,17 @@ html-code:focus, css-code:focus, js-code:focus {
   stator {
     flex-direction: row;
   }
+
   rotor {
     flex-direction: column;
   }
-  html-code, css-code, js-code,
-  html-code:focus, css-code:focus, js-code:focus {
+
+  html-code,
+  css-code,
+  js-code,
+  html-code:focus,
+  css-code:focus,
+  js-code:focus {
     width: calc(99%);
     height: calc(98% * .333);
   }

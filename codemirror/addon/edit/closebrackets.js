@@ -1,14 +1,14 @@
 // CodeMirror, copyright (c) by Marijn Haverbeke and others
 // Distributed under an MIT license: https://codemirror.net/LICENSE
 
-(function(mod) {
+(function (mod) {
   if (typeof exports == "object" && typeof module == "object") // CommonJS
     mod(require("../../lib/codemirror"));
   else if (typeof define == "function" && define.amd) // AMD
     define(["../../lib/codemirror"], mod);
   else // Plain browser env
     mod(CodeMirror);
-})(function(CodeMirror) {
+})(function (CodeMirror) {
   var defaults = {
     pairs: "()[]{}''\"\"",
     closeBefore: ")]}'\":;>",
@@ -18,7 +18,7 @@
 
   var Pos = CodeMirror.Pos;
 
-  CodeMirror.defineOption("autoCloseBrackets", false, function(cm, val, old) {
+  CodeMirror.defineOption("autoCloseBrackets", false, function (cm, val, old) {
     if (old && old != CodeMirror.Init) {
       cm.removeKeyMap(keyMap);
       cm.state.closeBrackets = null;
@@ -36,7 +36,7 @@
     return defaults[name];
   }
 
-  var keyMap = {Backspace: handleBackspace, Enter: handleEnter};
+  var keyMap = { Backspace: handleBackspace, Enter: handleEnter };
   function ensureBound(chars) {
     for (var i = 0; i < chars.length; i++) {
       var ch = chars.charAt(i), key = "'" + ch + "'"
@@ -46,7 +46,7 @@
   ensureBound(defaults.pairs + "`")
 
   function handler(ch) {
-    return function(cm) { return handleChar(cm, ch); };
+    return function (cm) { return handleChar(cm, ch); };
   }
 
   function getConfig(cm) {
@@ -84,7 +84,7 @@
       var around = charsAround(cm, ranges[i].head);
       if (!around || explode.indexOf(around) % 2 != 0) return CodeMirror.Pass;
     }
-    cm.operation(function() {
+    cm.operation(function () {
       var linesep = cm.lineSeparator() || "\n";
       cm.replaceSelection(linesep + linesep, null);
       moveSel(cm, -1)
@@ -102,16 +102,18 @@
     for (var i = 0; i < ranges.length; i++) {
       var range = ranges[i]
       if (range.head == cm.getCursor()) primary = i
-      var pos = range.head.ch || dir > 0 ? {line: range.head.line, ch: range.head.ch + dir} : {line: range.head.line - 1}
-      newRanges.push({anchor: pos, head: pos})
+      var pos = range.head.ch || dir > 0 ? { line: range.head.line, ch: range.head.ch + dir } : { line: range.head.line - 1 }
+      newRanges.push({ anchor: pos, head: pos })
     }
     cm.setSelections(newRanges, primary)
   }
 
   function contractSelection(sel) {
     var inverted = CodeMirror.cmpPos(sel.anchor, sel.head) > 0;
-    return {anchor: new Pos(sel.anchor.line, sel.anchor.ch + (inverted ? -1 : 1)),
-            head: new Pos(sel.head.line, sel.head.ch + (inverted ? 1 : -1))};
+    return {
+      anchor: new Pos(sel.anchor.line, sel.anchor.ch + (inverted ? -1 : 1)),
+      head: new Pos(sel.head.line, sel.head.ch + (inverted ? 1 : -1))
+    };
   }
 
   function handleChar(cm, ch) {
@@ -122,7 +124,7 @@
     var pos = pairs.indexOf(ch);
     if (pos == -1) return CodeMirror.Pass;
 
-    var closeBefore = getOption(conf,"closeBefore");
+    var closeBefore = getOption(conf, "closeBefore");
 
     var triples = getOption(conf, "triples");
 
@@ -144,7 +146,7 @@
         else
           curType = "skip";
       } else if (identical && cur.ch > 1 && triples.indexOf(ch) >= 0 &&
-                 cm.getRange(Pos(cur.line, cur.ch - 2), cur) == ch + ch) {
+        cm.getRange(Pos(cur.line, cur.ch - 2), cur) == ch + ch) {
         if (cur.ch > 2 && /\bstring/.test(cm.getTokenTypeAt(Pos(cur.line, cur.ch - 2)))) return CodeMirror.Pass;
         curType = "addFour";
       } else if (identical) {
@@ -162,7 +164,7 @@
 
     var left = pos % 2 ? pairs.charAt(pos - 1) : ch;
     var right = pos % 2 ? ch : pairs.charAt(pos + 1);
-    cm.operation(function() {
+    cm.operation(function () {
       if (type == "skip") {
         moveSel(cm, 1)
       } else if (type == "skipThree") {
@@ -189,7 +191,7 @@
 
   function charsAround(cm, pos) {
     var str = cm.getRange(Pos(pos.line, pos.ch - 1),
-                          Pos(pos.line, pos.ch + 1));
+      Pos(pos.line, pos.ch + 1));
     return str.length == 2 ? str : null;
   }
 
