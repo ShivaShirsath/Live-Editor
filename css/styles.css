@@ -2,16 +2,16 @@
   padding: 0 0;
   margin: 0 0;
   border: none;
-  box-sizing: border-box;
   appearance: none;
   box-shadow: none;
   outline: none;
   resize: none;
+  box-sizing: border-box;
 }
 
 stator {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-arround;
   width: 100vw;
   height: 100vh;
 }
@@ -19,25 +19,21 @@ stator {
 rotor {
   display: flex;
   justify-content: space-evenly;
-  width: 100vw;
-  height: 100vh;
+  width: 99%;
+  height: 99%;
 }
 
 iframe {
   width: 100%;
-  height: 100%;
+  height: 99%;
   background: white;
   color: black;
   border-radius: 2.5vmin;
   border: 0.1vmin solid orange;
 }
 
-html-code,
-css-code,
-js-code,
-html-code:focus,
-css-code:focus,
-js-code:focus {
+html-code, css-code, js-code,
+html-code:focus, css-code:focus, js-code:focus {
   font-size: 5vmin;
   cursor: 5vmin;
   background: transparent;
@@ -50,19 +46,14 @@ js-code:focus {
   stator {
     flex-direction: column;
   }
-
   rotor {
-    flex-direction: row;
+    flex-direction: column;
+    
   }
-
-  html-code,
-  css-code,
-  js-code,
-  html-code:focus,
-  css-code:focus,
-  js-code:focus {
-    width: calc(100vw * .33);
-    height: calc(100vh * .498);
+  html-code, css-code, js-code,
+  html-code:focus, css-code:focus, js-code:focus {
+    width: 100%;
+    height: calc(98% * .333);
   }
 }
 
@@ -70,18 +61,12 @@ js-code:focus {
   stator {
     flex-direction: row;
   }
-
   rotor {
     flex-direction: column;
   }
-
-  html-code,
-  css-code,
-  js-code,
-  html-code:focus,
-  css-code:focus,
-  js-code:focus {
-    width: calc(100vw * .498);
-    height: calc(100vh * .33);
+  html-code, css-code, js-code,
+  html-code:focus, css-code:focus, js-code:focus {
+    width: calc(99%);
+    height: calc(98% * .333);
   }
 }
