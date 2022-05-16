@@ -2,9 +2,9 @@
 
 <title>CodeMirror: HTML5 preview</title>
 <meta charset="utf-8"/>
-<link rel=stylesheet href="../doc/docs.css">
+<link href="../doc/docs.css" rel=stylesheet>
 
-<link rel=stylesheet href=../lib/codemirror.css>
+<link href=../lib/codemirror.css rel=stylesheet>
 <script src=../lib/codemirror.js></script>
 <script src=../mode/xml/xml.js></script>
 <script src=../mode/javascript/javascript.js></script>
@@ -23,7 +23,9 @@
         border: 1px solid black;
         border-left: 0px;
       }
-    </style>
+
+
+</style>
 <div id=nav>
   <a href="https://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../doc/logo.png"></a>
 
@@ -38,9 +40,9 @@
 </div>
 
 <article>
-<h2>HTML5 preview</h2>
+  <h2>HTML5 preview</h2>
 
-    <textarea id=code name=code>
+  <textarea id=code name=code>
 <!doctype html>
 <html>
   <head>
@@ -63,8 +65,8 @@
     </script>
   </body>
 </html></textarea>
-    <iframe id=preview></iframe>
-    <script>
+  <iframe id=preview></iframe>
+  <script>
       var delay;
       // Initialize CodeMirror editor with a nice html5 canvas demo.
       var editor = CodeMirror.fromTextArea(document.getElementById('code'), {
@@ -83,5 +85,7 @@
         preview.close();
       }
       setTimeout(updatePreview, 300);
-    </script>
-  </article>
+
+
+  </script>
+</article>

@@ -2,9 +2,9 @@
 
 <title>CodeMirror: Diff mode</title>
 <meta charset="utf-8"/>
-<link rel=stylesheet href="../../doc/docs.css">
+<link href="../../doc/docs.css" rel=stylesheet>
 
-<link rel="stylesheet" href="../../lib/codemirror.css">
+<link href="../../lib/codemirror.css" rel="stylesheet">
 <script src="../../lib/codemirror.js"></script>
 <script src="diff.js"></script>
 <style>
@@ -13,9 +13,11 @@
       span.cm-error { background-color: black; opacity: 0.4;}
       span.cm-error.cm-string { background-color: red; }
       span.cm-error.cm-tag { background-color: #2b2; }
-    </style>
+
+
+</style>
 <div id=nav>
-  <a href="https://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png" alt=""></a>
+  <a href="https://codemirror.net"><h1>CodeMirror</h1><img alt="" id=logo src="../../doc/logo.png"></a>
 
   <ul>
     <li><a href="../../index.html">Home</a>
@@ -29,8 +31,8 @@
 </div>
 
 <article>
-<h2>Diff mode</h2>
-<form><textarea id="code" name="code">
+  <h2>Diff mode</h2>
+  <form><textarea id="code" name="code">
 diff --git a/index.html b/index.html
 index c1d9156..7764744 100644
 --- a/index.html
@@ -108,10 +110,12 @@ index 04646a9..9a39cc7 100644
      workTime: 200,
      workDelay: 300,
 </textarea></form>
-    <script>
+  <script>
       var editor = CodeMirror.fromTextArea(document.getElementById("code"), {});
-    </script>
 
-    <p><strong>MIME types defined:</strong> <code>text/x-diff</code>.</p>
 
-  </article>
+  </script>
+
+  <p><strong>MIME types defined:</strong> <code>text/x-diff</code>.</p>
+
+</article>

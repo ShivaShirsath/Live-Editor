@@ -2,15 +2,15 @@
 
 <title>CodeMirror: Octave mode</title>
 <meta charset="utf-8"/>
-<link rel=stylesheet href="../../doc/docs.css">
+<link href="../../doc/docs.css" rel=stylesheet>
 
-<link rel="stylesheet" href="../../lib/codemirror.css">
+<link href="../../lib/codemirror.css" rel="stylesheet">
 <script src="../../lib/codemirror.js"></script>
 <script src="../../addon/edit/matchbrackets.js"></script>
 <script src="octave.js"></script>
 <style>.CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}</style>
 <div id=nav>
-  <a href="https://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png" alt=""></a>
+  <a href="https://codemirror.net"><h1>CodeMirror</h1><img alt="" id=logo src="../../doc/logo.png"></a>
 
   <ul>
     <li><a href="../../index.html">Home</a>
@@ -24,9 +24,9 @@
 </div>
 
 <article>
-<h2>Octave mode</h2>
+  <h2>Octave mode</h2>
 
-    <div><textarea id="code" name="code">
+  <div><textarea id="code" name="code">
 %numbers
 [1234 1234i 1234j]
 [.234 .234j 2.23i]
@@ -69,7 +69,7 @@ global persistent
 line comment %}
 
     </textarea></div>
-    <script>
+  <script>
       var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
         mode: {name: "octave",
                version: 2,
@@ -78,7 +78,9 @@ line comment %}
         indentUnit: 4,
         matchBrackets: true
       });
-    </script>
 
-    <p><strong>MIME types defined:</strong> <code>text/x-octave</code>.</p>
+
+  </script>
+
+  <p><strong>MIME types defined:</strong> <code>text/x-octave</code>.</p>
 </article>

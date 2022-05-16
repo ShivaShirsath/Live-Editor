@@ -2,13 +2,13 @@
 
 <title>CodeMirror: SQL Mode for CodeMirror</title>
 <meta charset="utf-8"/>
-<link rel=stylesheet href="../../doc/docs.css">
+<link href="../../doc/docs.css" rel=stylesheet>
 
-<link rel="stylesheet" href="../../lib/codemirror.css" />
+<link href="../../lib/codemirror.css" rel="stylesheet"/>
 <script src="../../lib/codemirror.js"></script>
 <script src="../../addon/edit/matchbrackets.js"></script>
 <script src="sql.js"></script>
-<link rel="stylesheet" href="../../addon/hint/show-hint.css" />
+<link href="../../addon/hint/show-hint.css" rel="stylesheet"/>
 <script src="../../addon/hint/show-hint.js"></script>
 <script src="../../addon/hint/sql-hint.js"></script>
 <style>
@@ -16,9 +16,11 @@
     border-top: 1px solid black;
     border-bottom: 1px solid black;
 }
-        </style>
+
+
+</style>
 <div id=nav>
-  <a href="https://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png" alt=""></a>
+  <a href="https://codemirror.net"><h1>CodeMirror</h1><img alt="" id=logo src="../../doc/logo.png"></a>
 
   <ul>
     <li><a href="../../index.html">Home</a>
@@ -32,8 +34,8 @@
 </div>
 
 <article>
-<h2>SQL Mode for CodeMirror</h2>
-<form>
+  <h2>SQL Mode for CodeMirror</h2>
+  <form>
             <textarea id="code" name="code">-- SQL Mode for CodeMirror
 SELECT SQL_NO_CACHE DISTINCT
 		@var1 AS `val1`, @'val2', @global.'sql_mode',
@@ -49,21 +51,21 @@ SELECT SQL_NO_CACHE DISTINCT
 	comment! */
 	LIMIT 1 OFFSET 0;
 </textarea>
-            </form>
-            <p><strong>MIME types defined:</strong>
-            <code><a href="?mime=text/x-sql">text/x-sql</a></code>,
-            <code><a href="?mime=text/x-mysql">text/x-mysql</a></code>,
-            <code><a href="?mime=text/x-mariadb">text/x-mariadb</a></code>,
-            <code><a href="?mime=text/x-cassandra">text/x-cassandra</a></code>,
-            <code><a href="?mime=text/x-plsql">text/x-plsql</a></code>,
-            <code><a href="?mime=text/x-mssql">text/x-mssql</a></code>,
-            <code><a href="?mime=text/x-hive">text/x-hive</a></code>,
-            <code><a href="?mime=text/x-pgsql">text/x-pgsql</a></code>,
-            <code><a href="?mime=text/x-gql">text/x-gql</a></code>,
-            <code><a href="?mime=text/x-gpsql">text/x-gpsql</a></code>.
-            <code><a href="?mime=text/x-esper">text/x-esper</a></code>.
-        </p>
-<script>
+  </form>
+  <p><strong>MIME types defined:</strong>
+    <code><a href="?mime=text/x-sql">text/x-sql</a></code>,
+    <code><a href="?mime=text/x-mysql">text/x-mysql</a></code>,
+    <code><a href="?mime=text/x-mariadb">text/x-mariadb</a></code>,
+    <code><a href="?mime=text/x-cassandra">text/x-cassandra</a></code>,
+    <code><a href="?mime=text/x-plsql">text/x-plsql</a></code>,
+    <code><a href="?mime=text/x-mssql">text/x-mssql</a></code>,
+    <code><a href="?mime=text/x-hive">text/x-hive</a></code>,
+    <code><a href="?mime=text/x-pgsql">text/x-pgsql</a></code>,
+    <code><a href="?mime=text/x-gql">text/x-gql</a></code>,
+    <code><a href="?mime=text/x-gpsql">text/x-gpsql</a></code>.
+    <code><a href="?mime=text/x-esper">text/x-esper</a></code>.
+  </p>
+  <script>
 window.onload = function() {
   var mime = 'text/x-mariadb';
   // get mime type
@@ -84,6 +86,8 @@ window.onload = function() {
     }}
   });
 };
-</script>
+
+
+  </script>
 
 </article>

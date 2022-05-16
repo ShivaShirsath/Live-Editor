@@ -2,7 +2,7 @@
 
 <title>CodeMirror: Automatically derive odd wrapping behavior for your browser</title>
 <meta charset="utf-8"/>
-<link rel=stylesheet href="../doc/docs.css">
+<link href="../doc/docs.css" rel=stylesheet>
 
 <div id=nav>
   <a href="https://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../doc/logo.png"></a>
@@ -18,19 +18,19 @@
 </div>
 
 <article>
-<h2>Automatically derive odd wrapping behavior for your browser</h2>
+  <h2>Automatically derive odd wrapping behavior for your browser</h2>
 
 
-    <p>This is a hack to automatically derive
+  <p>This is a hack to automatically derive
     a <code>spanAffectsWrapping</code> regexp for a browser. See the
     comments above that variable
     in <a href="../lib/codemirror.js"><code>lib/codemirror.js</code></a>
     for some more details.</p>
 
-    <div style="white-space: pre-wrap; width: 50px;" id="area"></div>
-    <pre id="output"></pre>
+  <div id="area" style="white-space: pre-wrap; width: 50px;"></div>
+  <pre id="output"></pre>
 
-    <script id="script">
+  <script id="script">
       var a = document.getElementById("area"), bad = Object.create(null);
       var chars = "a~`!@#$%^&*()-_=+}{[]\\|'\"/?.>,<:;", l = chars.length;
       for (var x = 0; x < l; ++x) for (var y = 0; y < l; ++y) {
@@ -81,5 +81,7 @@
       }
 
       document.getElementById("output").appendChild(document.createTextNode("Your regexp is: " + (newRE || "^$")));
-    </script>
-  </article>
+
+
+  </script>
+</article>

@@ -2,14 +2,14 @@
 
 <title>CodeMirror: Elm mode</title>
 <meta charset="utf-8"/>
-<link rel=stylesheet href="../../doc/docs.css">
+<link href="../../doc/docs.css" rel=stylesheet>
 
-<link rel="stylesheet" href="../../lib/codemirror.css">
+<link href="../../lib/codemirror.css" rel="stylesheet">
 <script src="../../lib/codemirror.js"></script>
 <script src="elm.js"></script>
 <style>.CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}</style>
 <div id=nav>
-  <a href="https://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png" alt=""></a>
+  <a href="https://codemirror.net"><h1>CodeMirror</h1><img alt="" id=logo src="../../doc/logo.png"></a>
 
   <ul>
     <li><a href="../../index.html">Home</a>
@@ -23,9 +23,9 @@
 </div>
 
 <article>
-<h2>Elm mode</h2>
+  <h2>Elm mode</h2>
 
-<div><textarea id="code" name="code">
+  <div><textarea id="code" name="code">
 import Color exposing (..)
 import Graphics.Collage exposing (..)
 import Graphics.Element exposing (..)
@@ -50,12 +50,14 @@ hand clr len time =
         |> traced (solid clr)
 </textarea></div>
 
-    <script>
+  <script>
       var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
         lineNumbers: true,
         mode: "text/x-elm"
       });
-    </script>
 
-    <p><strong>MIME types defined:</strong> <code>text/x-elm</code>.</p>
-  </article>
+
+  </script>
+
+  <p><strong>MIME types defined:</strong> <code>text/x-elm</code>.</p>
+</article>

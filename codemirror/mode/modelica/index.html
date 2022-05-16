@@ -2,17 +2,17 @@
 
 <title>CodeMirror: Modelica mode</title>
 <meta charset="utf-8"/>
-<link rel=stylesheet href="../../doc/docs.css">
+<link href="../../doc/docs.css" rel=stylesheet>
 
-<link rel="stylesheet" href="../../lib/codemirror.css">
+<link href="../../lib/codemirror.css" rel="stylesheet">
 <script src="../../lib/codemirror.js"></script>
 <script src="../../addon/edit/matchbrackets.js"></script>
-<link rel="stylesheet" href="../../addon/hint/show-hint.css">
+<link href="../../addon/hint/show-hint.css" rel="stylesheet">
 <script src="../../addon/hint/show-hint.js"></script>
 <script src="modelica.js"></script>
 <style>.CodeMirror {border: 2px inset #dee;}</style>
 <div id=nav>
-  <a href="https://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png" alt=""></a>
+  <a href="https://codemirror.net"><h1>CodeMirror</h1><img alt="" id=logo src="../../doc/logo.png"></a>
 
   <ul>
     <li><a href="../../index.html">Home</a>
@@ -26,9 +26,9 @@
 </div>
 
 <article>
-<h2>Modelica mode</h2>
+  <h2>Modelica mode</h2>
 
-<div><textarea id="modelica">
+  <div><textarea id="modelica">
 model BouncingBall
   parameter Real e = 0.7;
   parameter Real g = 9.81;
@@ -50,7 +50,7 @@ equation
 end BouncingBall;
 </textarea></div>
 
-    <script>
+  <script>
       var modelicaEditor = CodeMirror.fromTextArea(document.getElementById("modelica"), {
         lineNumbers: true,
         matchBrackets: true,
@@ -58,10 +58,12 @@ end BouncingBall;
       });
       var mac = CodeMirror.keyMap.default == CodeMirror.keyMap.macDefault;
       CodeMirror.keyMap.default[(mac ? "Cmd" : "Ctrl") + "-Space"] = "autocomplete";
-    </script>
 
-    <p>Simple mode that tries to handle Modelica as well as it can.</p>
 
-    <p><strong>MIME types defined:</strong> <code>text/x-modelica</code>
+  </script>
+
+  <p>Simple mode that tries to handle Modelica as well as it can.</p>
+
+  <p><strong>MIME types defined:</strong> <code>text/x-modelica</code>
     (Modlica code).</p>
 </article>

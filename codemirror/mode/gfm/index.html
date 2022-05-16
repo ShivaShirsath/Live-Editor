@@ -2,9 +2,9 @@
 
 <title>CodeMirror: GFM mode</title>
 <meta charset="utf-8"/>
-<link rel=stylesheet href="../../doc/docs.css">
+<link href="../../doc/docs.css" rel=stylesheet>
 
-<link rel="stylesheet" href="../../lib/codemirror.css">
+<link href="../../lib/codemirror.css" rel="stylesheet">
 <script src="../../lib/codemirror.js"></script>
 <script src="../../addon/mode/overlay.js"></script>
 <script src="../xml/xml.js"></script>
@@ -18,9 +18,11 @@
 <style>
   .CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}
   .cm-s-default .cm-emoji {color: #009688;}
+
+
 </style>
 <div id=nav>
-  <a href="https://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png" alt=""></a>
+  <a href="https://codemirror.net"><h1>CodeMirror</h1><img alt="" id=logo src="../../doc/logo.png"></a>
 
   <ul>
     <li><a href="../../index.html">Home</a>
@@ -34,8 +36,8 @@
 </div>
 
 <article>
-<h2>GFM mode</h2>
-<form><textarea id="code" name="code">
+  <h2>GFM mode</h2>
+  <form><textarea id="code" name="code">
 GitHub Flavored Markdown
 ========================
 
@@ -88,7 +90,7 @@ See http://github.github.com/github-flavored-markdown/.
 
 </textarea></form>
 
-    <script>
+  <script>
       var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
         mode: {
           name: "gfm",
@@ -99,38 +101,41 @@ See http://github.github.com/github-flavored-markdown/.
         lineNumbers: true,
         theme: "default"
       });
-    </script>
 
-    <p>Optionally depends on other modes for properly highlighted code blocks.</p>
 
-    <p>Gfm mode supports these options (apart those from base Markdown mode):</p>
-    <ul>
-      <li>
-        <d1>
-          <dt><code>gitHubSpice: boolean</code></dt>
-          <dd>Hashes, issues... (default: <code>true</code>).</dd>
-        </d1>
-      </li>
-      <li>
-        <d1>
-          <dt><code>taskLists: boolean</code></dt>
-          <dd><code>- [ ]</code> syntax (default: <code>true</code>).</dd>
-        </d1>
-      </li>
-      <li>
-        <d1>
-          <dt><code>strikethrough: boolean</code></dt>
-          <dd><code>~~foo~~</code> syntax (default: <code>true</code>).</dd>
-        </d1>
-      </li>
-      <li>
-        <d1>
-          <dt><code>emoji: boolean</code></dt>
-          <dd><code>:emoji:</code> syntax (default: <code>true</code>).</dd>
-        </d1>
-      </li>
-    </ul>
+  </script>
 
-    <p><strong>Parsing/Highlighting Tests:</strong> <a href="../../test/index.html#gfm_*">normal</a>,  <a href="../../test/index.html#verbose,gfm_*">verbose</a>.</p>
+  <p>Optionally depends on other modes for properly highlighted code blocks.</p>
 
-  </article>
+  <p>Gfm mode supports these options (apart those from base Markdown mode):</p>
+  <ul>
+    <li>
+      <d1>
+        <dt><code>gitHubSpice: boolean</code></dt>
+        <dd>Hashes, issues... (default: <code>true</code>).</dd>
+      </d1>
+    </li>
+    <li>
+      <d1>
+        <dt><code>taskLists: boolean</code></dt>
+        <dd><code>- [ ]</code> syntax (default: <code>true</code>).</dd>
+      </d1>
+    </li>
+    <li>
+      <d1>
+        <dt><code>strikethrough: boolean</code></dt>
+        <dd><code>~~foo~~</code> syntax (default: <code>true</code>).</dd>
+      </d1>
+    </li>
+    <li>
+      <d1>
+        <dt><code>emoji: boolean</code></dt>
+        <dd><code>:emoji:</code> syntax (default: <code>true</code>).</dd>
+      </d1>
+    </li>
+  </ul>
+
+  <p><strong>Parsing/Highlighting Tests:</strong> <a href="../../test/index.html#gfm_*">normal</a>,
+    <a href="../../test/index.html#verbose,gfm_*">verbose</a>.</p>
+
+</article>

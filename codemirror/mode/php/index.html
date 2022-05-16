@@ -2,9 +2,9 @@
 
 <title>CodeMirror: PHP mode</title>
 <meta charset="utf-8"/>
-<link rel=stylesheet href="../../doc/docs.css">
+<link href="../../doc/docs.css" rel=stylesheet>
 
-<link rel="stylesheet" href="../../lib/codemirror.css">
+<link href="../../lib/codemirror.css" rel="stylesheet">
 <script src="../../lib/codemirror.js"></script>
 <script src="../../addon/edit/matchbrackets.js"></script>
 <script src="../htmlmixed/htmlmixed.js"></script>
@@ -15,7 +15,7 @@
 <script src="php.js"></script>
 <style>.CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}</style>
 <div id=nav>
-  <a href="https://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png" alt=""></a>
+  <a href="https://codemirror.net"><h1>CodeMirror</h1><img alt="" id=logo src="../../doc/logo.png"></a>
 
   <ul>
     <li><a href="../../index.html">Home</a>
@@ -29,8 +29,8 @@
 </div>
 
 <article>
-<h2>PHP mode</h2>
-<form><textarea id="code" name="code">
+  <h2>PHP mode</h2>
+  <form><textarea id="code" name="code">
 <?php
 $a = array('a' => 1, 'b' => 2, 3 => 'c');
 
@@ -46,7 +46,7 @@ function hello($who) {
 </script>
 </textarea></form>
 
-    <script>
+  <script>
       var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
         lineNumbers: true,
         matchBrackets: true,
@@ -54,11 +54,14 @@ function hello($who) {
         indentUnit: 4,
         indentWithTabs: true
       });
-    </script>
 
-    <p>Simple HTML/PHP mode based on
+
+  </script>
+
+  <p>Simple HTML/PHP mode based on
     the <a href="../clike/">C-like</a> mode. Depends on XML,
     JavaScript, CSS, HTMLMixed, and C-like modes.</p>
 
-    <p><strong>MIME types defined:</strong> <code>application/x-httpd-php</code> (HTML with PHP code), <code>text/x-php</code> (plain, non-wrapped PHP code).</p>
-  </article>
+  <p><strong>MIME types defined:</strong> <code>application/x-httpd-php</code> (HTML with PHP code),
+    <code>text/x-php</code> (plain, non-wrapped PHP code).</p>
+</article>

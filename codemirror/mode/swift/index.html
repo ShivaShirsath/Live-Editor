@@ -2,17 +2,19 @@
 
 <title>CodeMirror: Swift mode</title>
 <meta charset="utf-8"/>
-<link rel=stylesheet href="../../doc/docs.css">
+<link href="../../doc/docs.css" rel=stylesheet>
 
-<link rel="stylesheet" href="../../lib/codemirror.css">
+<link href="../../lib/codemirror.css" rel="stylesheet">
 <script src="../../lib/codemirror.js"></script>
 <script src="../../addon/edit/matchbrackets.js"></script>
 <script src="./swift.js"></script>
 <style>
 	.CodeMirror { border: 2px inset #dee; }
-    </style>
+
+
+</style>
 <div id=nav>
-  <a href="https://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png" alt=""></a>
+  <a href="https://codemirror.net"><h1>CodeMirror</h1><img alt="" id=logo src="../../doc/logo.png"></a>
 
   <ul>
     <li><a href="../../index.html">Home</a>
@@ -26,8 +28,8 @@
 </div>
 
 <article>
-<h2>Swift mode</h2>
-<form><textarea id="code" name="code">
+  <h2>Swift mode</h2>
+  <form><textarea id="code" name="code">
 protocol HeaderViewProtocol {
     func setTitle(_ string: String)
 }
@@ -56,15 +58,17 @@ let header = HeaderView(view: label) { str in
 header.setTitle("hello")
 </textarea></form>
 
-    <script>
+  <script>
       var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
         lineNumbers: true,
         matchBrackets: true,
         mode: "text/x-swift"
       });
-    </script>
 
-    <p>A simple mode for Swift</p>
 
-    <p><strong>MIME types defined:</strong> <code>text/x-swift</code> (Swift code)</p>
-  </article>
+  </script>
+
+  <p>A simple mode for Swift</p>
+
+  <p><strong>MIME types defined:</strong> <code>text/x-swift</code> (Swift code)</p>
+</article>

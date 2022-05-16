@@ -2,16 +2,16 @@
 
 <title>CodeMirror: Stylus mode</title>
 <meta charset="utf-8"/>
-<link rel=stylesheet href="../../doc/docs.css">
-<link rel="stylesheet" href="../../lib/codemirror.css">
-<link rel="stylesheet" href="../../addon/hint/show-hint.css">
+<link href="../../doc/docs.css" rel=stylesheet>
+<link href="../../lib/codemirror.css" rel="stylesheet">
+<link href="../../addon/hint/show-hint.css" rel="stylesheet">
 <script src="../../lib/codemirror.js"></script>
 <script src="stylus.js"></script>
 <script src="../../addon/hint/show-hint.js"></script>
 <script src="../../addon/hint/css-hint.js"></script>
 <style>.CodeMirror {background: #f8f8f8;} form{margin-bottom: .7em;}</style>
 <div id=nav>
-  <a href="https://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png" alt=""></a>
+  <a href="https://codemirror.net"><h1>CodeMirror</h1><img alt="" id=logo src="../../doc/logo.png"></a>
 
   <ul>
     <li><a href="../../index.html">Home</a>
@@ -25,8 +25,8 @@
 </div>
 
 <article>
-<h2>Stylus mode</h2>
-<form><textarea id="code" name="code">
+  <h2>Stylus mode</h2>
+  <form><textarea id="code" name="code">
 /* Stylus mode */
 
 #id,
@@ -93,14 +93,16 @@ a:focus {
   outline-offset: -2px;
 }
 </textarea>
-</form>
-<script>
+  </form>
+  <script>
   var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
     extraKeys: {"Ctrl-Space": "autocomplete"},
     tabSize: 2
   });
-</script>
 
-<p><strong>MIME types defined:</strong> <code>text/x-styl</code>.</p>
-<p>Created by <a href="https://github.com/dmitrykiselyov">Dmitry Kiselyov</a></p>
+
+  </script>
+
+  <p><strong>MIME types defined:</strong> <code>text/x-styl</code>.</p>
+  <p>Created by <a href="https://github.com/dmitrykiselyov">Dmitry Kiselyov</a></p>
 </article>

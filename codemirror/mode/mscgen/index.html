@@ -2,14 +2,14 @@
 
 <title>CodeMirror: MscGen mode</title>
 <meta charset="utf-8"/>
-<link rel=stylesheet href="../../doc/docs.css">
+<link href="../../doc/docs.css" rel=stylesheet>
 
-<link rel="stylesheet" href="../../lib/codemirror.css">
+<link href="../../lib/codemirror.css" rel="stylesheet">
 <script src="../../lib/codemirror.js"></script>
 <script src="mscgen.js"></script>
 <style>.CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}</style>
 <div id=nav>
-  <a href="https://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png" alt=""></a>
+  <a href="https://codemirror.net"><h1>CodeMirror</h1><img alt="" id=logo src="../../doc/logo.png"></a>
   <ul>
     <li><a href="../../index.html">Home</a>
     <li><a href="../../doc/manual.html">Manual</a>
@@ -22,9 +22,9 @@
 </div>
 
 <article>
-<h2>MscGen mode</h2>
+  <h2>MscGen mode</h2>
 
-<div><textarea id="mscgen-code">
+  <div><textarea id="mscgen-code">
 # Sample mscgen program
 # See http://www.mcternan.me.uk/mscgen or
 # https://sverweij.github.io/mscgen_js for more samples
@@ -53,9 +53,9 @@ msc {
 }
 </textarea></div>
 
-<h2>Xù mode</h2>
+  <h2>Xù mode</h2>
 
-<div><textarea id="xu-code">
+  <div><textarea id="xu-code">
 # Xù - expansions to MscGen to support inline expressions
 #      https://github.com/sverweij/mscgen_js/blob/master/wikum/xu.md
 # More samples: https://sverweij.github.io/mscgen_js
@@ -100,8 +100,8 @@ xu {
 }
 </textarea></div>
 
-<h2>MsGenny mode</h2>
-<div><textarea id="msgenny-code">
+  <h2>MsGenny mode</h2>
+  <div><textarea id="msgenny-code">
 # MsGenny - simplified version of MscGen / Xù
 #           https://github.com/sverweij/mscgen_js/blob/master/wikum/msgenny.md
 # More samples: https://sverweij.github.io/mscgen_js
@@ -122,12 +122,12 @@ b abox b : b abox b\n(state/ condition);
 ---      : --- (comment);
 </textarea></div>
 
-    <p>
-      Simple mode for highlighting MscGen and two derived sequence
-      chart languages.
-    </p>
+  <p>
+    Simple mode for highlighting MscGen and two derived sequence
+    chart languages.
+  </p>
 
-    <script>
+  <script>
       var mscgenEditor = CodeMirror.fromTextArea(document.getElementById("mscgen-code"), {
         lineNumbers: true,
         mode: "text/x-mscgen",
@@ -140,12 +140,14 @@ b abox b : b abox b\n(state/ condition);
         lineNumbers: true,
         mode: "text/x-msgenny",
       });
-    </script>
 
-    <p><strong>MIME types defined:</strong>
-      <code>text/x-mscgen</code>
-      <code>text/x-xu</code>
-      <code>text/x-msgenny</code>
-    </p>
+
+  </script>
+
+  <p><strong>MIME types defined:</strong>
+    <code>text/x-mscgen</code>
+    <code>text/x-xu</code>
+    <code>text/x-msgenny</code>
+  </p>
 
 </article>

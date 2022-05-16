@@ -2,12 +2,12 @@
 
 <title>CodeMirror: Tern Demo</title>
 <meta charset="utf-8"/>
-<link rel=stylesheet href="../doc/docs.css">
+<link href="../doc/docs.css" rel=stylesheet>
 
-<link rel="stylesheet" href="../lib/codemirror.css">
-<link rel="stylesheet" href="../addon/dialog/dialog.css">
-<link rel="stylesheet" href="../addon/hint/show-hint.css">
-<link rel="stylesheet" href="../addon/tern/tern.css">
+<link href="../lib/codemirror.css" rel="stylesheet">
+<link href="../addon/dialog/dialog.css" rel="stylesheet">
+<link href="../addon/hint/show-hint.css" rel="stylesheet">
+<link href="../addon/tern/tern.css" rel="stylesheet">
 <script src="../lib/codemirror.js"></script>
 <script src="../mode/javascript/javascript.js"></script>
 <script src="../addon/dialog/dialog.js"></script>
@@ -25,7 +25,9 @@
 <script src="https://unpkg.com/tern/plugin/doc_comment.js"></script>
 <style>
       .CodeMirror {border: 1px solid #ddd;}
-    </style>
+
+
+</style>
 <div id=nav>
   <a href="https://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../doc/logo.png"></a>
 
@@ -40,8 +42,8 @@
 </div>
 
 <article>
-<h2>Tern Demo</h2>
-<form><textarea id="code" name="code">// Use ctrl-space to complete something
+  <h2>Tern Demo</h2>
+  <form><textarea id="code" name="code">// Use ctrl-space to complete something
 // Put the cursor in or after an expression, press ctrl-o to
 // find its type
 
@@ -78,23 +80,29 @@ var randomStr = myMod.randomElt(myMod.strList);
 var randomInt = myMod.randomElt(myMod.intList);
 </textarea></form>
 
-<p>Demonstrates integration of <a href="http://ternjs.net/">Tern</a>
-and CodeMirror. The following keys are bound:</p>
+  <p>Demonstrates integration of <a href="http://ternjs.net/">Tern</a>
+    and CodeMirror. The following keys are bound:</p>
 
-<dl>
-  <dt>Ctrl-Space</dt><dd>Autocomplete</dd>
-  <dt>Ctrl-O</dt><dd>Find docs for the expression at the cursor</dd>
-  <dt>Ctrl-I</dt><dd>Find type at cursor</dd>
-  <dt>Alt-.</dt><dd>Jump to definition (Alt-, to jump back)</dd>
-  <dt>Ctrl-Q</dt><dd>Rename variable</dd>
-  <dt>Ctrl-.</dt><dd>Select all occurrences of a variable</dd>
-</dl>
+  <dl>
+    <dt>Ctrl-Space</dt>
+    <dd>Autocomplete</dd>
+    <dt>Ctrl-O</dt>
+    <dd>Find docs for the expression at the cursor</dd>
+    <dt>Ctrl-I</dt>
+    <dd>Find type at cursor</dd>
+    <dt>Alt-.</dt>
+    <dd>Jump to definition (Alt-, to jump back)</dd>
+    <dt>Ctrl-Q</dt>
+    <dd>Rename variable</dd>
+    <dt>Ctrl-.</dt>
+    <dd>Select all occurrences of a variable</dd>
+  </dl>
 
-<p>Documentation is sparse for now. See the top of
-the <a href="../addon/tern/tern.js">script</a> for a rough API
-overview.</p>
+  <p>Documentation is sparse for now. See the top of
+    the <a href="../addon/tern/tern.js">script</a> for a rough API
+    overview.</p>
 
-<script>
+  <script>
   function getURL(url, c) {
     var xhr = new XMLHttpRequest();
     xhr.open("get", url, true);
@@ -128,6 +136,8 @@ overview.</p>
     lineNumbers: true,
     mode: "javascript"
   });
-</script>
 
-  </article>
+
+  </script>
+
+</article>

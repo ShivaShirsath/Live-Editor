@@ -2,9 +2,9 @@
 
 <title>CodeMirror: R mode</title>
 <meta charset="utf-8"/>
-<link rel=stylesheet href="../../doc/docs.css">
+<link href="../../doc/docs.css" rel=stylesheet>
 
-<link rel="stylesheet" href="../../lib/codemirror.css">
+<link href="../../lib/codemirror.css" rel="stylesheet">
 <script src="../../lib/codemirror.js"></script>
 <script src="r.js"></script>
 <style>
@@ -13,9 +13,11 @@
       .cm-s-default span.cm-dollar { color: orange; font-weight: bold; }
       .cm-s-default span.cm-arrow { color: brown; }
       .cm-s-default span.cm-arg-is { color: brown; }
-    </style>
+
+
+</style>
 <div id=nav>
-  <a href="https://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png" alt=""></a>
+  <a href="https://codemirror.net"><h1>CodeMirror</h1><img alt="" id=logo src="../../doc/logo.png"></a>
 
   <ul>
     <li><a href="../../index.html">Home</a>
@@ -29,8 +31,8 @@
 </div>
 
 <article>
-<h2>R mode</h2>
-<form><textarea id="code" name="code">
+  <h2>R mode</h2>
+  <form><textarea id="code" name="code">
 X <- list(height = 5.4, weight = 54)
 cat("Printing objects: "); print(X)
 print("Accessing individual elements:")
@@ -76,13 +78,15 @@ c = 3
 4 -> d
 5 ->> e
 </textarea></form>
-    <script>
+  <script>
       var editor = CodeMirror.fromTextArea(document.getElementById("code"), {});
-    </script>
 
-    <p><strong>MIME types defined:</strong> <code>text/x-rsrc</code>.</p>
 
-    <p>Development of the CodeMirror R mode was kindly sponsored
+  </script>
+
+  <p><strong>MIME types defined:</strong> <code>text/x-rsrc</code>.</p>
+
+  <p>Development of the CodeMirror R mode was kindly sponsored
     by <a href="https://twitter.com/ubalo">Ubalo</a>.</p>
 
-  </article>
+</article>

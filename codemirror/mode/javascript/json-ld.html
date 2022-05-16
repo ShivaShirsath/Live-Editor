@@ -2,9 +2,9 @@
 
 <title>CodeMirror: JSON-LD mode</title>
 <meta charset="utf-8"/>
-<link rel=stylesheet href="../../doc/docs.css">
+<link href="../../doc/docs.css" rel=stylesheet>
 
-<link rel="stylesheet" href="../../lib/codemirror.css">
+<link href="../../lib/codemirror.css" rel="stylesheet">
 <script src="../../lib/codemirror.js"></script>
 <script src="../../addon/edit/matchbrackets.js"></script>
 <script src="../../addon/comment/continuecomment.js"></script>
@@ -26,10 +26,10 @@
 </div>
 
 <article>
-<h2>JSON-LD mode</h2>
+  <h2>JSON-LD mode</h2>
 
 
-<div><textarea id="code" name="code">
+  <div><textarea id="code" name="code">
 {
   "@context": {
     "name": "http://schema.org/name",
@@ -59,14 +59,16 @@
 }
 </textarea></div>
 
-    <script>
+  <script>
       var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
         matchBrackets: true,
         autoCloseBrackets: true,
         mode: "application/ld+json",
         lineWrapping: true
       });
-    </script>
-    
-    <p>This is a specialization of the <a href="index.html">JavaScript mode</a>.</p>
-  </article>
+
+
+  </script>
+
+  <p>This is a specialization of the <a href="index.html">JavaScript mode</a>.</p>
+</article>

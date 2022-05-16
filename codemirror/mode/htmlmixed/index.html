@@ -2,9 +2,9 @@
 
 <title>CodeMirror: HTML mixed mode</title>
 <meta charset="utf-8"/>
-<link rel=stylesheet href="../../doc/docs.css">
+<link href="../../doc/docs.css" rel=stylesheet>
 
-<link rel="stylesheet" href="../../lib/codemirror.css">
+<link href="../../lib/codemirror.css" rel="stylesheet">
 <script src="../../lib/codemirror.js"></script>
 <script src="../../addon/selection/selection-pointer.js"></script>
 <script src="../xml/xml.js"></script>
@@ -14,7 +14,7 @@
 <script src="htmlmixed.js"></script>
 <style>.CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}</style>
 <div id=nav>
-  <a href="https://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png" alt=""></a>
+  <a href="https://codemirror.net"><h1>CodeMirror</h1><img alt="" id=logo src="../../doc/logo.png"></a>
 
   <ul>
     <li><a href="../../index.html">Home</a>
@@ -28,8 +28,8 @@
 </div>
 
 <article>
-<h2>HTML mixed mode</h2>
-<form><textarea id="code" name="code">
+  <h2>HTML mixed mode</h2>
+  <form><textarea id="code" name="code">
 <html style="color: green">
   <!-- this is a comment -->
   <head>
@@ -53,7 +53,7 @@
   </body>
 </html>
 </textarea></form>
-    <script>
+  <script>
       // Define an extended mixed-mode that understands vbscript and
       // leaves mustache/handlebars embedded templates in html mode
       var mixedMode = {
@@ -67,24 +67,26 @@
         mode: mixedMode,
         selectionPointer: true
       });
-    </script>
 
-    <p>The HTML mixed mode depends on the XML, JavaScript, and CSS modes.</p>
 
-    <p>It takes an optional mode configuration
+  </script>
+
+  <p>The HTML mixed mode depends on the XML, JavaScript, and CSS modes.</p>
+
+  <p>It takes an optional mode configuration
     option, <code>tags</code>, which can be used to add custom
     behavior for specific tags. When given, it should be an object
     mapping tag names (for example <code>script</code>) to arrays or
     three-element arrays. Those inner arrays indicate [attributeName,
     valueRegexp, <a href="../../doc/manual.html#option_mode">modeSpec</a>]
     specifications. For example, you could use <code>["type", /^foo$/,
-    "foo"]</code> to map the attribute <code>type="foo"</code> to
+      "foo"]</code> to map the attribute <code>type="foo"</code> to
     the <code>foo</code> mode. When the first two fields are null
     (<code>[null, null, "mode"]</code>), the given mode is used for
     any such tag that doesn't match any of the previously given
     attributes. For example:</p>
 
-    <pre>var myModeSpec = {
+  <pre>var myModeSpec = {
   name: "htmlmixed",
   tags: {
     style: [["type", /^text\/(x-)?scss$/, "text/x-scss"],
@@ -93,8 +95,8 @@
   }
 }</pre>
 
-    <p><strong>MIME types defined:</strong> <code>text/html</code>
+  <p><strong>MIME types defined:</strong> <code>text/html</code>
     (redefined, only takes effect if you load this parser after the
     XML parser).</p>
 
-  </article>
+</article>

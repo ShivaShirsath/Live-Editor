@@ -3,17 +3,19 @@
 <head>
   <title>CodeMirror: Code Folding Demo</title>
   <meta charset="utf-8"/>
-  <link rel=stylesheet href="../doc/docs.css">
+  <link href="../doc/docs.css" rel=stylesheet>
 
   <style>
     .some-css {
       color: red;
       line-height: 2;
     }
+
+
   </style>
 
-  <link rel="stylesheet" href="../lib/codemirror.css">
-  <link rel="stylesheet" href="../addon/fold/foldgutter.css" />
+  <link href="../lib/codemirror.css" rel="stylesheet">
+  <link href="../addon/fold/foldgutter.css" rel="stylesheet"/>
   <script src="../lib/codemirror.js"></script>
   <script src="../addon/fold/foldcode.js"></script>
   <script src="../addon/fold/foldgutter.js"></script>
@@ -30,6 +32,8 @@
   <script src="../mode/markdown/markdown.js"></script>
   <style>
     .CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}
+
+
   </style>
 </head>
 
@@ -51,11 +55,11 @@
   <h2>Code Folding Demo</h2>
   <form>
     <div style="max-width: 50em; margin-bottom: 1em">JavaScript:<br>
-    <textarea id="code" name="code"></textarea></div>
+      <textarea id="code" name="code"></textarea></div>
     <div style="max-width: 50em; margin-bottom: 1em">HTML:<br>
-    <textarea id="code-html" name="code-html"></textarea></div>    
+      <textarea id="code-html" name="code-html"></textarea></div>
     <div style="max-width: 50em; margin-bottom: 1em">JSON with custom widget:<br>
-    <textarea id="code-json" name="code-json">
+      <textarea id="code-json" name="code-json">
 {
   "menu": {
     "id": "file",
@@ -71,7 +75,7 @@
 }
     </textarea></div>
     <div style="max-width: 50em">Python:<br>
-    <textarea id="code-python" name="code">
+      <textarea id="code-python" name="code">
 def foo():
   do_some_stuff()
   here
@@ -89,7 +93,7 @@ class Bar:
 
 # A comment</textarea></div>
     <div style="max-width: 50em">Markdown:<br>
-    <textarea id="code-markdown" name="code"></textarea></div>
+      <textarea id="code-markdown" name="code"></textarea></div>
   </form>
   <script id="script">
 /*
@@ -179,6 +183,8 @@ window.onload = function() {
     gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
   });
 };
+
+
   </script>
 </article>
 </body>

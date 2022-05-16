@@ -2,10 +2,10 @@
 
 <title>CodeMirror: Simple Scrollbar Demo</title>
 <meta charset="utf-8"/>
-<link rel=stylesheet href="../doc/docs.css">
+<link href="../doc/docs.css" rel=stylesheet>
 
-<link rel="stylesheet" href="../lib/codemirror.css">
-<link rel="stylesheet" href="../addon/scroll/simplescrollbars.css">
+<link href="../lib/codemirror.css" rel="stylesheet">
+<link href="../addon/scroll/simplescrollbars.css" rel="stylesheet">
 <script src="../lib/codemirror.js"></script>
 <script src="../mode/markdown/markdown.js"></script>
 <script src="../mode/xml/xml.js"></script>
@@ -25,8 +25,8 @@
 </div>
 
 <article>
-<h2>Simple Scrollbar Demo</h2>
-<form><textarea id="code" name="code"># Custom Scrollbars
+  <h2>Simple Scrollbar Demo</h2>
+  <form><textarea id="code" name="code"># Custom Scrollbars
 
 This is a piece of text that creates scrollbars
 
@@ -67,16 +67,23 @@ maxime sem dapibus et eget, mi enim dignissim nec pretium, augue vehicula, volut
 lobortis viverra, cum in sed, vivamus tellus. Libero at malesuada est vivamus leo tortor.
 </textarea></form>
 
-<p>The <a href="../doc/manual.html#addon_simplescrollbars"><code>simplescrollbars</code></a> addon defines two
-styles of non-native scrollbars: <a href="javascript:editor.setOption('scrollbarStyle', 'simple')"><code>"simple"</code></a> and <a href="javascript:editor.setOption('scrollbarStyle', 'overlay')"><code>"overlay"</code></a> (click to try), which can be passed to
-the <a href="../doc/manual.html#option_scrollbarStyle"><code>scrollbarStyle</code></a> option. These implement
-the scrollbar using DOM elements, allowing more control over
-its <a href="../addon/scroll/simplescrollbars.css">appearance</a>.</p>
+  <p>The <a href="../doc/manual.html#addon_simplescrollbars"><code>simplescrollbars</code></a> addon
+    defines two
+    styles of non-native scrollbars: <a
+      href="javascript:editor.setOption('scrollbarStyle', 'simple')"><code>"simple"</code></a> and
+    <a href="javascript:editor.setOption('scrollbarStyle', 'overlay')"><code>"overlay"</code></a>
+    (click to try), which can be passed to
+    the <a href="../doc/manual.html#option_scrollbarStyle"><code>scrollbarStyle</code></a> option.
+    These implement
+    the scrollbar using DOM elements, allowing more control over
+    its <a href="../addon/scroll/simplescrollbars.css">appearance</a>.</p>
 
   <script>
     var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
       lineNumbers: true,
       scrollbarStyle: "simple"
     });
+
+
   </script>
 </article>

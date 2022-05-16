@@ -2,15 +2,15 @@
 
 <title>CodeMirror: Velocity mode</title>
 <meta charset="utf-8"/>
-<link rel=stylesheet href="../../doc/docs.css">
+<link href="../../doc/docs.css" rel=stylesheet>
 
-<link rel="stylesheet" href="../../lib/codemirror.css">
-<link rel="stylesheet" href="../../theme/night.css">
+<link href="../../lib/codemirror.css" rel="stylesheet">
+<link href="../../theme/night.css" rel="stylesheet">
 <script src="../../lib/codemirror.js"></script>
 <script src="velocity.js"></script>
 <style>.CodeMirror {border: 1px solid black;}</style>
 <div id=nav>
-  <a href="https://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png" alt=""></a>
+  <a href="https://codemirror.net"><h1>CodeMirror</h1><img alt="" id=logo src="../../doc/logo.png"></a>
 
   <ul>
     <li><a href="../../index.html">Home</a>
@@ -24,8 +24,8 @@
 </div>
 
 <article>
-<h2>Velocity mode</h2>
-<form><textarea id="code" name="code">
+  <h2>Velocity mode</h2>
+  <form><textarea id="code" name="code">
 ## Velocity Code Demo
 #*
    based on PL/SQL mode by Peter Raganitsch, adapted to Velocity by Steve O'Hara ( http://www.pivotal-solutions.co.uk )
@@ -106,15 +106,17 @@ Addition: #set( $value = $foo + 1 )
    Remainder: #set( $value = $foo % $bar )
 
 </textarea></form>
-    <script>
+  <script>
       var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
         theme: "night",
         lineNumbers: true,
         indentUnit: 4,
         mode: "text/velocity"
       });
-    </script>
 
-    <p><strong>MIME types defined:</strong> <code>text/velocity</code>.</p>
 
-  </article>
+  </script>
+
+  <p><strong>MIME types defined:</strong> <code>text/velocity</code>.</p>
+
+</article>

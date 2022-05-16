@@ -2,15 +2,17 @@
 
 <title>CodeMirror: Indented wrapped line demo</title>
 <meta charset="utf-8"/>
-<link rel=stylesheet href="../doc/docs.css">
+<link href="../doc/docs.css" rel=stylesheet>
 
-<link rel="stylesheet" href="../lib/codemirror.css">
+<link href="../lib/codemirror.css" rel="stylesheet">
 <script src="../lib/codemirror.js"></script>
 <script src="../mode/xml/xml.js"></script>
 <style>
       .CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}
       .CodeMirror pre > * { text-indent: 0px; }
-    </style>
+
+
+</style>
 <div id=nav>
   <a href="https://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../doc/logo.png"></a>
 
@@ -25,8 +27,8 @@
 </div>
 
 <article>
-<h2>Indented wrapped line demo</h2>
-<form><textarea id="code" name="code">
+  <h2>Indented wrapped line demo</h2>
+  <form><textarea id="code" name="code">
 <!doctype html>
 <body>
   <h2 id="overview">Overview</h2>
@@ -37,11 +39,11 @@
 </body>
 </textarea></form>
 
-    <p>This page uses a hack on top of the <code>"renderLine"</code>
+  <p>This page uses a hack on top of the <code>"renderLine"</code>
     event to make wrapped text line up with the base indentation of
     the line.</p>
 
-    <script>
+  <script>
       var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
         lineNumbers: true,
         lineWrapping: true,
@@ -54,6 +56,8 @@
         elt.style.paddingLeft = (basePadding + off) + "px";
       });
       editor.refresh();
-    </script>
 
-  </article>
+
+  </script>
+
+</article>

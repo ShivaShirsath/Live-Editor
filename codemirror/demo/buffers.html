@@ -2,15 +2,17 @@
 
 <title>CodeMirror: Multiple Buffer & Split View Demo</title>
 <meta charset="utf-8"/>
-<link rel=stylesheet href="../doc/docs.css">
+<link href="../doc/docs.css" rel=stylesheet>
 
-<link rel="stylesheet" href="../lib/codemirror.css">
+<link href="../lib/codemirror.css" rel="stylesheet">
 <script src="../lib/codemirror.js"></script>
 <script src="../mode/javascript/javascript.js"></script>
 <script src="../mode/css/css.js"></script>
 <style id=style>
       .CodeMirror {border: 1px solid black; height: 250px;}
-    </style>
+
+
+</style>
 <div id=nav>
   <a href="https://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../doc/logo.png"></a>
 
@@ -25,21 +27,23 @@
 </div>
 
 <article>
-<h2>Multiple Buffer & Split View Demo</h2>
+  <h2>Multiple Buffer & Split View Demo</h2>
 
 
-    <div id=code_top></div>
-    <div>
-      Select buffer: <select id=buffers_top></select>
-      &nbsp; &nbsp; <button onclick="newBuf('top')">New buffer</button>
-    </div>
-    <div id=code_bot></div>
-    <div>
-      Select buffer: <select id=buffers_bot></select>
-      &nbsp; &nbsp; <button onclick="newBuf('bot')">New buffer</button>
-    </div>
+  <div id=code_top></div>
+  <div>
+    Select buffer: <select id=buffers_top></select>
+    &nbsp; &nbsp;
+    <button onclick="newBuf('top')">New buffer</button>
+  </div>
+  <div id=code_bot></div>
+  <div>
+    Select buffer: <select id=buffers_bot></select>
+    &nbsp; &nbsp;
+    <button onclick="newBuf('bot')">New buffer</button>
+  </div>
 
-    <script id=script>
+  <script id=script>
 var sel_top = document.getElementById("buffers_top");
 CodeMirror.on(sel_top, "change", function() {
   selectBuffer(ed_top, sel_top.options[sel_top.selectedIndex].value);
@@ -98,12 +102,14 @@ var ed_top = CodeMirror(document.getElementById("code_top"), {lineNumbers: true}
 selectBuffer(ed_top, "js");
 var ed_bot = CodeMirror(document.getElementById("code_bot"), {lineNumbers: true});
 selectBuffer(ed_bot, "js");
-</script>
 
-    <p>Demonstration of
+
+  </script>
+
+  <p>Demonstration of
     using <a href="../doc/manual.html#linkedDoc">linked documents</a>
     to provide a split view on a document, and
     using <a href="../doc/manual.html#swapDoc"><code>swapDoc</code></a>
     to use a single editor to display multiple documents.</p>
 
-  </article>
+</article>

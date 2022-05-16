@@ -2,14 +2,14 @@
 
 <title>CodeMirror: Common Lisp mode</title>
 <meta charset="utf-8"/>
-<link rel=stylesheet href="../../doc/docs.css">
+<link href="../../doc/docs.css" rel=stylesheet>
 
-<link rel="stylesheet" href="../../lib/codemirror.css">
+<link href="../../lib/codemirror.css" rel="stylesheet">
 <script src="../../lib/codemirror.js"></script>
 <script src="commonlisp.js"></script>
 <style>.CodeMirror {background: #f8f8f8;}</style>
 <div id=nav>
-  <a href="https://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png" alt=""></a>
+  <a href="https://codemirror.net"><h1>CodeMirror</h1><img alt="" id=logo src="../../doc/logo.png"></a>
 
   <ul>
     <li><a href="../../index.html">Home</a>
@@ -23,8 +23,8 @@
 </div>
 
 <article>
-<h2>Common Lisp mode</h2>
-<form><textarea id="code" name="code">(in-package :cl-postgres)
+  <h2>Common Lisp mode</h2>
+  <form><textarea id="code" name="code">(in-package :cl-postgres)
 
 ;; These are used to synthesize reader and writer names for integer
 ;; reading/writing functions when the amount of bytes and the
@@ -168,10 +168,12 @@ when UTF-8 support is enabled."
       (error (error)
         (warn "Ignoring the error which happened while trying to close PostgreSQL socket: ~A" error)))))
 </textarea></form>
-    <script>
+  <script>
       var editor = CodeMirror.fromTextArea(document.getElementById("code"), {lineNumbers: true});
-    </script>
 
-    <p><strong>MIME types defined:</strong> <code>text/x-common-lisp</code>.</p>
 
-  </article>
+  </script>
+
+  <p><strong>MIME types defined:</strong> <code>text/x-common-lisp</code>.</p>
+
+</article>

@@ -2,13 +2,13 @@
 
 <title>CodeMirror: RPM changes mode</title>
 <meta charset="utf-8"/>
-<link rel=stylesheet href="../../doc/docs.css">
+<link href="../../doc/docs.css" rel=stylesheet>
 
-    <link rel="stylesheet" href="../../../lib/codemirror.css">
-    <script src="../../../lib/codemirror.js"></script>
-    <script src="changes.js"></script>
-    <link rel="stylesheet" href="../../../doc/docs.css">
-    <style>.CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}</style>
+<link href="../../../lib/codemirror.css" rel="stylesheet">
+<script src="../../../lib/codemirror.js"></script>
+<script src="changes.js"></script>
+<link href="../../../doc/docs.css" rel="stylesheet">
+<style>.CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}</style>
 
 <div id=nav>
   <a href="https://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../../doc/logo.png"></a>
@@ -25,9 +25,9 @@
 </div>
 
 <article>
-<h2>RPM changes mode</h2>
+  <h2>RPM changes mode</h2>
 
-    <div><textarea id="code" name="code">
+  <div><textarea id="code" name="code">
 -------------------------------------------------------------------
 Tue Oct 18 13:58:40 UTC 2011 - misterx@example.com
 
@@ -54,13 +54,15 @@ Wed Oct  5 14:34:10 UTC 2011 - misterx@example.com
   - patch linker (src/cmd/ld/dwarf.c) to emit correct location of go
     gdb functions and pretty printer
 </textarea></div>
-    <script>
+  <script>
       var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
         mode: {name: "changes"},
         lineNumbers: true,
         indentUnit: 4
       });
-    </script>
 
-    <p><strong>MIME types defined:</strong> <code>text/x-rpm-changes</code>.</p>
+
+  </script>
+
+  <p><strong>MIME types defined:</strong> <code>text/x-rpm-changes</code>.</p>
 </article>

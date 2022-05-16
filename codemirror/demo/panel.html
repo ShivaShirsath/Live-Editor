@@ -2,9 +2,9 @@
 
 <title>CodeMirror: Panel Demo</title>
 <meta charset="utf-8"/>
-<link rel=stylesheet href="../doc/docs.css">
+<link href="../doc/docs.css" rel=stylesheet>
 
-<link rel="stylesheet" href="../lib/codemirror.css">
+<link href="../lib/codemirror.css" rel="stylesheet">
 <script src="../lib/codemirror.js"></script>
 <script src="../mode/javascript/javascript.js"></script>
 <script src="../mode/xml/xml.js"></script>
@@ -37,6 +37,8 @@
   .panel.bottom, .panel.before-bottom {
     border-top: 1px solid #ddd;
   }
+
+
 </style>
 
 <div id=nav>
@@ -54,35 +56,35 @@
 
 <article>
 
-<h2>Panel Demo</h2>
+  <h2>Panel Demo</h2>
 
-<div class="border">
+  <div class="border">
     <textarea id="code" name="code"></textarea>
-</div>
+  </div>
 
-<p>
-  The <a href="../doc/manual.html#addon_panel"><code>panel</code></a>
-  addon allows you to display panels above or below an editor.
-  <br>
-  Click the links below to add panels at the given position:
-</p>
+  <p>
+    The <a href="../doc/manual.html#addon_panel"><code>panel</code></a>
+    addon allows you to display panels above or below an editor.
+    <br>
+    Click the links below to add panels at the given position:
+  </p>
 
-<div id="demo">
-<p>
-  <a class="add-panel" onclick="addPanel('top')">top</a>
-  <a class="add-panel" onclick="addPanel('after-top')">after-top</a>
-  <a class="add-panel" onclick="addPanel('before-bottom')">before-bottom</a>
-  <a class="add-panel" onclick="addPanel('bottom')">bottom</a>
-</p>
-<p>
-  You can also replace an existing panel:
-</p>
-<form onsubmit="return replacePanel(this);" name="replace_panel">
-  <input type="submit" value="Replace panel n°" />
-  <input type="number" name="panel_id" min="1" value="1" />
-</form>
+  <div id="demo">
+    <p>
+      <a class="add-panel" onclick="addPanel('top')">top</a>
+      <a class="add-panel" onclick="addPanel('after-top')">after-top</a>
+      <a class="add-panel" onclick="addPanel('before-bottom')">before-bottom</a>
+      <a class="add-panel" onclick="addPanel('bottom')">bottom</a>
+    </p>
+    <p>
+      You can also replace an existing panel:
+    </p>
+    <form name="replace_panel" onsubmit="return replacePanel(this);">
+      <input type="submit" value="Replace panel n°"/>
+      <input min="1" name="panel_id" type="number" value="1"/>
+    </form>
 
-<script>
+    <script>
 var textarea = document.getElementById("code");
 var demo = document.getElementById("demo");
 var numPanels = 0;
@@ -130,8 +132,10 @@ function replacePanel(form) {
   panels[node.id] = editor.addPanel(node, {replace: panel, position: "after-top", stable: true});
   return false;
 }
-</script>
 
-</div>
+
+    </script>
+
+  </div>
 
 </article>

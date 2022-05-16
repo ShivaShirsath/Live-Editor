@@ -2,16 +2,18 @@
 
 <title>CodeMirror: Tag Matcher Demo</title>
 <meta charset="utf-8"/>
-<link rel=stylesheet href="../doc/docs.css">
+<link href="../doc/docs.css" rel=stylesheet>
 
-<link rel="stylesheet" href="../lib/codemirror.css">
+<link href="../lib/codemirror.css" rel="stylesheet">
 <script src="../lib/codemirror.js"></script>
 <script src="../addon/fold/xml-fold.js"></script>
 <script src="../addon/edit/matchtags.js"></script>
 <script src="../mode/xml/xml.js"></script>
 <style>
       .CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}
-    </style>
+
+
+</style>
 <div id=nav>
   <a href="https://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../doc/logo.png"></a>
 
@@ -26,12 +28,12 @@
 </div>
 
 <article>
-<h2>Tag Matcher Demo</h2>
+  <h2>Tag Matcher Demo</h2>
 
 
-    <div id="editor"></div>
+  <div id="editor"></div>
 
-    <script>
+  <script>
 window.onload = function() {
   editor = CodeMirror(document.getElementById("editor"), {
     value: "<html>\n  " + document.documentElement.innerHTML + "\n</html>",
@@ -40,9 +42,11 @@ window.onload = function() {
     extraKeys: {"Ctrl-J": "toMatchingTag"}
   });
 };
-    </script>
 
-    <p>Put the cursor on or inside a pair of tags to highlight them.
+
+  </script>
+
+  <p>Put the cursor on or inside a pair of tags to highlight them.
     Press Ctrl-J to jump to the tag that matches the one under the
     cursor.</p>
-  </article>
+</article>

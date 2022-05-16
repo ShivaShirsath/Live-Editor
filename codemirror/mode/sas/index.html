@@ -2,9 +2,9 @@
 
 <title>CodeMirror: SAS mode</title>
 <meta charset="utf-8"/>
-<link rel=stylesheet href="../../doc/docs.css">
+<link href="../../doc/docs.css" rel=stylesheet>
 
-<link rel="stylesheet" href="../../lib/codemirror.css">
+<link href="../../lib/codemirror.css" rel="stylesheet">
 <script src="../../lib/codemirror.js"></script>
 <script src="../xml/xml.js"></script>
 <script src="sas.js"></script>
@@ -13,9 +13,11 @@
   .cm-s-default .cm-trailing-space-a:before,
   .cm-s-default .cm-trailing-space-b:before {position: absolute; content: "\00B7"; color: #777;}
   .cm-s-default .cm-trailing-space-new-line:before {position: absolute; content: "\21B5"; color: #777;}
+
+
 </style>
 <div id=nav>
-  <a href="https://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png" alt=""></a>
+  <a href="https://codemirror.net"><h1>CodeMirror</h1><img alt="" id=logo src="../../doc/logo.png"></a>
 
   <ul>
     <li><a href="../../index.html">Home</a>
@@ -29,8 +31,8 @@
 </div>
 
 <article>
-<h2>SAS mode</h2>
-<form><textarea id="code" name="code">
+  <h2>SAS mode</h2>
+  <form><textarea id="code" name="code">
 libname foo "/tmp/foobar";
 %let count=1;
 
@@ -69,13 +71,15 @@ proc sql;
 quit;
 </textarea></form>
 
-<script>
+  <script>
   var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
     mode: 'sas',
     lineNumbers: true
   });
-</script>
 
-<p><strong>MIME types defined:</strong> <code>text/x-sas</code>.</p>
+
+  </script>
+
+  <p><strong>MIME types defined:</strong> <code>text/x-sas</code>.</p>
 
 </article>

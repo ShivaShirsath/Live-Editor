@@ -2,17 +2,19 @@
 
 <title>CodeMirror: ML-like mode</title>
 <meta charset="utf-8"/>
-<link rel=stylesheet href="../../doc/docs.css">
+<link href="../../doc/docs.css" rel=stylesheet>
 
-<link rel=stylesheet href=../../lib/codemirror.css>
+<link href=../../lib/codemirror.css rel=stylesheet>
 <script src=../../lib/codemirror.js></script>
 <script src=../../addon/edit/matchbrackets.js></script>
 <script src=mllike.js></script>
 <style type=text/css>
   .CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}
+
+
 </style>
 <div id=nav>
-  <a href="https://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png" alt=""></a>
+  <a href="https://codemirror.net"><h1>CodeMirror</h1><img alt="" id=logo src="../../doc/logo.png"></a>
 
   <ul>
     <li><a href="../../index.html">Home</a>
@@ -26,10 +28,10 @@
 </div>
 
 <article>
-<h2>OCaml mode</h2>
+  <h2>OCaml mode</h2>
 
 
-<textarea id="ocamlCode">
+  <textarea id="ocamlCode">
 (* Summing a list of integers *)
 let rec sum xs =
   match xs with
@@ -153,8 +155,8 @@ let o = 0o1234
 1. +. 2.
 </textarea>
 
-<h2>F# mode</h2>
-<textarea id="fsharpCode">
+  <h2>F# mode</h2>
+  <textarea id="fsharpCode">
 module CodeMirror.FSharp
 
 let rec fib = function
@@ -180,7 +182,7 @@ type Color =
 </textarea>
 
 
-<script>
+  <script>
   var ocamlEditor = CodeMirror.fromTextArea(document.getElementById('ocamlCode'), {
     mode: 'text/x-ocaml',
     lineNumbers: true,
@@ -192,7 +194,10 @@ type Color =
     lineNumbers: true,
     matchBrackets: true
   });
-</script>
 
-<p><strong>MIME types defined:</strong> <code>text/x-ocaml</code> (OCaml) and <code>text/x-fsharp</code> (F#).</p>
+
+  </script>
+
+  <p><strong>MIME types defined:</strong> <code>text/x-ocaml</code> (OCaml) and
+    <code>text/x-fsharp</code> (F#).</p>
 </article>

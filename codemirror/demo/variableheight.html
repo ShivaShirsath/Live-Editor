@@ -2,9 +2,9 @@
 
 <title>CodeMirror: Variable Height Demo</title>
 <meta charset="utf-8"/>
-<link rel=stylesheet href="../doc/docs.css">
+<link href="../doc/docs.css" rel=stylesheet>
 
-<link rel="stylesheet" href="../lib/codemirror.css">
+<link href="../lib/codemirror.css" rel="stylesheet">
 <script src="../lib/codemirror.js"></script>
 <script src="../mode/markdown/markdown.js"></script>
 <script src="../mode/xml/xml.js"></script>
@@ -18,7 +18,9 @@
       .cm-header-5 { font-size: 100%; }
       .cm-header-6 { font-size: 90%; }
       .cm-strong { font-size: 140%; }
-    </style>
+
+
+</style>
 <div id=nav>
   <a href="https://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../doc/logo.png"></a>
 
@@ -33,8 +35,8 @@
 </div>
 
 <article>
-<h2>Variable Height Demo</h2>
-<form><textarea id="code" name="code"># A First Level Header
+  <h2>Variable Height Demo</h2>
+  <form><textarea id="code" name="code"># A First Level Header
 
 **Bold** text in a normal-size paragraph.
 
@@ -57,11 +59,13 @@ dog's back.
 >
 > ## This is an H2 in a blockquote       
 </textarea></form>
-    <script id="script">
+  <script id="script">
       var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
         lineNumbers: true,
         lineWrapping: true,
         mode: "markdown"
       });
-    </script>
-  </article>
+
+
+  </script>
+</article>

@@ -2,11 +2,12 @@
 
 <title>CodeMirror: Forth mode</title>
 <meta charset="utf-8"/>
-<link rel=stylesheet href="../../doc/docs.css">
+<link href="../../doc/docs.css" rel=stylesheet>
 
-<link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="../../lib/codemirror.css">
-<link rel=stylesheet href="../../theme/colorforth.css">
+<link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet'
+      type='text/css'>
+<link href="../../lib/codemirror.css" rel="stylesheet">
+<link href="../../theme/colorforth.css" rel=stylesheet>
 <script src="../../lib/codemirror.js"></script>
 <script src="forth.js"></script>
 <style>
@@ -14,9 +15,11 @@
     font-family: 'Droid Sans Mono', monospace;
     font-size: 14px;
 }
+
+
 </style>
 <div id=nav>
-  <a href="https://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png" alt=""></a>
+  <a href="https://codemirror.net"><h1>CodeMirror</h1><img alt="" id=logo src="../../doc/logo.png"></a>
 
   <ul>
     <li><a href="../../index.html">Home</a>
@@ -31,9 +34,9 @@
 
 <article>
 
-<h2>Forth mode</h2>
+  <h2>Forth mode</h2>
 
-<form><textarea id="code" name="code">
+  <form><textarea id="code" name="code">
 \ Insertion sort
 
 : cell-  1 cells - ;
@@ -56,7 +59,7 @@
   loop drop ;</textarea>
   </form>
 
-<script>
+  <script>
   var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
     lineNumbers: true,
     lineWrapping: true,
@@ -66,10 +69,14 @@
     theme: "colorforth",
     mode: "text/x-forth"
   });
-</script>
 
-<p>Simple mode that handle Forth-Syntax (<a href="http://en.wikipedia.org/wiki/Forth_%28programming_language%29">Forth on Wikipedia</a>).</p>
 
-<p><strong>MIME types defined:</strong> <code>text/x-forth</code>.</p>
+  </script>
+
+  <p>Simple mode that handle Forth-Syntax (<a
+    href="http://en.wikipedia.org/wiki/Forth_%28programming_language%29">Forth on Wikipedia</a>).
+  </p>
+
+  <p><strong>MIME types defined:</strong> <code>text/x-forth</code>.</p>
 
 </article>

@@ -2,9 +2,9 @@
 
 <title>CodeMirror: Visible tabs demo</title>
 <meta charset="utf-8"/>
-<link rel=stylesheet href="../doc/docs.css">
+<link href="../doc/docs.css" rel=stylesheet>
 
-<link rel="stylesheet" href="../lib/codemirror.css">
+<link href="../lib/codemirror.css" rel="stylesheet">
 <script src="../lib/codemirror.js"></script>
 <script src="../mode/clike/clike.js"></script>
 <style>
@@ -14,7 +14,9 @@
          background-position: right;
          background-repeat: no-repeat;
       }
-    </style>
+
+
+</style>
 <div id=nav>
   <a href="https://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../doc/logo.png"></a>
 
@@ -29,8 +31,8 @@
 </div>
 
 <article>
-<h2>Visible tabs demo</h2>
-<form><textarea id="code" name="code">
+  <h2>Visible tabs demo</h2>
+  <form><textarea id="code" name="code">
 #include "syscalls.h"
 /* getchar:  simple buffered version */
 int getchar(void)
@@ -46,10 +48,10 @@ int getchar(void)
 }
 </textarea></form>
 
-<p>Tabs inside the editor are spans with the
-class <code>cm-tab</code>, and can be styled.</p>
+  <p>Tabs inside the editor are spans with the
+    class <code>cm-tab</code>, and can be styled.</p>
 
-    <script>
+  <script>
       var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
         lineNumbers: true,
         tabSize: 4,
@@ -57,6 +59,8 @@ class <code>cm-tab</code>, and can be styled.</p>
         indentWithTabs: true,
         mode: "text/x-csrc"
       });
-    </script>
 
-  </article>
+
+  </script>
+
+</article>

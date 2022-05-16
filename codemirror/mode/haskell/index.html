@@ -2,16 +2,16 @@
 
 <title>CodeMirror: Haskell mode</title>
 <meta charset="utf-8"/>
-<link rel=stylesheet href="../../doc/docs.css">
+<link href="../../doc/docs.css" rel=stylesheet>
 
-<link rel="stylesheet" href="../../lib/codemirror.css">
-<link rel="stylesheet" href="../../theme/elegant.css">
+<link href="../../lib/codemirror.css" rel="stylesheet">
+<link href="../../theme/elegant.css" rel="stylesheet">
 <script src="../../lib/codemirror.js"></script>
 <script src="../../addon/edit/matchbrackets.js"></script>
 <script src="haskell.js"></script>
 <style>.CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}</style>
 <div id=nav>
-  <a href="https://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png" alt=""></a>
+  <a href="https://codemirror.net"><h1>CodeMirror</h1><img alt="" id=logo src="../../doc/logo.png"></a>
 
   <ul>
     <li><a href="../../index.html">Home</a>
@@ -25,8 +25,8 @@
 </div>
 
 <article>
-<h2>Haskell mode</h2>
-<form><textarea id="code" name="code">
+  <h2>Haskell mode</h2>
+  <form><textarea id="code" name="code">
 module UniquePerms (
     uniquePerms
     )
@@ -61,13 +61,15 @@ permBag bs = concatMap (\(f,cs) -> map (f:) $ permBag cs) . oneOfEach $ bs
     mapSnd = map . apSnd
 </textarea></form>
 
-    <script>
+  <script>
       var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
         lineNumbers: true,
         matchBrackets: true,
         theme: "elegant"
       });
-    </script>
 
-    <p><strong>MIME types defined:</strong> <code>text/x-haskell</code>.</p>
-  </article>
+
+  </script>
+
+  <p><strong>MIME types defined:</strong> <code>text/x-haskell</code>.</p>
+</article>

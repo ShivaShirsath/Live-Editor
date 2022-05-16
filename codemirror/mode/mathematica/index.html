@@ -2,17 +2,19 @@
 
 <title>CodeMirror: Mathematica mode</title>
 <meta charset="utf-8"/>
-<link rel=stylesheet href="../../doc/docs.css">
+<link href="../../doc/docs.css" rel=stylesheet>
 
-<link rel=stylesheet href=../../lib/codemirror.css>
+<link href=../../lib/codemirror.css rel=stylesheet>
 <script src=../../lib/codemirror.js></script>
 <script src=../../addon/edit/matchbrackets.js></script>
 <script src=mathematica.js></script>
 <style type=text/css>
   .CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}
+
+
 </style>
 <div id=nav>
-  <a href="https://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png" alt=""></a>
+  <a href="https://codemirror.net"><h1>CodeMirror</h1><img alt="" id=logo src="../../doc/logo.png"></a>
 
   <ul>
     <li><a href="../../index.html">Home</a>
@@ -26,10 +28,10 @@
 </div>
 
 <article>
-<h2>Mathematica mode</h2>
+  <h2>Mathematica mode</h2>
 
 
-<textarea id="mathematicaCode">
+  <textarea id="mathematicaCode">
 (* example Mathematica code *)
 (* Dualisiert wird anhand einer Polarität an einer
    Quadrik $x^t Q x = 0$ mit regulärer Matrix $Q$ (also
@@ -60,13 +62,15 @@ dualize[ Q_, p_ ] := Block[
     ]
 </textarea>
 
-<script>
+  <script>
   var mathematicaEditor = CodeMirror.fromTextArea(document.getElementById('mathematicaCode'), {
     mode: 'text/x-mathematica',
     lineNumbers: true,
     matchBrackets: true
   });
-</script>
 
-<p><strong>MIME types defined:</strong> <code>text/x-mathematica</code> (Mathematica).</p>
+
+  </script>
+
+  <p><strong>MIME types defined:</strong> <code>text/x-mathematica</code> (Mathematica).</p>
 </article>
