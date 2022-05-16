@@ -1,6 +1,6 @@
 {
   "name": "Live Code Editor",
-  "short_name": "live editor for web",
+  "short_name": "Live Code Editor",
   "start_url": ".",
   "display": "fullscreen",
   "background_color": "#ff8800aa",
