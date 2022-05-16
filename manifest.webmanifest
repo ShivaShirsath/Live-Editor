@@ -1,0 +1,29 @@
+{
+  "name": "Live Code Editor",
+  "short_name": "live editor for web",
+  "start_url": ".",
+  "display": "fullscreen",
+  "background_color": "#ff8800aa",
+  "theme_color": "#ff8800",
+  "description": "HTML, CSS, JavaScript Editor with live preview.",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "favicon_io/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon_io/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "favicon_io/ss.jpg",
+      "type": "image/jpg",
+      "sizes": "2340x1080"
+    }
+  ]
+}

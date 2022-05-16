@@ -1,7 +1,12 @@
 * {
   padding: 0 0;
   margin: 0 0;
+  border: none;
   box-sizing: border-box;
+  appearance: none;
+  box-shadow: none;
+  outline: none;
+  resize: none;
 }
 
 stator {
@@ -19,27 +24,22 @@ rotor {
 }
 
 iframe {
-  border-radius: 2.5vmin;
   width: 100%;
   height: 100%;
   background: white;
   color: black;
+  border-radius: 2.5vmin;
+  border: 0.1vmin solid orange;
 }
 
-html-code,
-html-code:focus,
-css-code,
-css-code:focus,
-js-code,
-js-code:focus {
-  font-size: 2.5vmin;
-  cursor: 2.5vmin;
+html-code, css-code, js-code,
+html-code:focus, css-code:focus, js-code:focus {
+  font-size: 5vmin;
+  cursor: 5vmin;
   background: transparent;
   overflow: hidden;
-  appearance: none;
-  box-shadow: none;
-  outline: none;
-  resize: none;
+  border: 0.1vmin solid orange;
+  border-radius: 2.5vmin;
 }
 
 @media (orientation: portrait) {
@@ -49,12 +49,8 @@ js-code:focus {
   rotor {
     flex-direction: row;
   }
-  html-code,
-  html-code:focus,
-  css-code,
-  css-code:focus,
-  js-code,
-  js-code:focus {
+  html-code, css-code, js-code,
+  html-code:focus, css-code:focus, js-code:focus {
     width: calc(100vw * .33);
     height: calc(100vh * .498);
   }
@@ -67,12 +63,8 @@ js-code:focus {
   rotor {
     flex-direction: column;
   }
-  html-code,
-  html-code:focus,
-  css-code,
-  css-code:focus,
-  js-code,
-  js-code:focus {
+  html-code, css-code, js-code,
+  html-code:focus, css-code:focus, js-code:focus {
     width: calc(100vw * .498);
     height: calc(100vh * .33);
   }
