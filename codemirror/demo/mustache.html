@@ -13,6 +13,7 @@
       .cm-mustache {color: #0ca;}
 
 
+
 </style>
 <div id=nav>
   <a href="https://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../doc/logo.png"></a>
@@ -60,6 +61,7 @@ CodeMirror.defineMode("mustache", function(config, parserConfig) {
   return CodeMirror.overlayMode(CodeMirror.getMode(config, parserConfig.backdrop || "text/html"), mustacheOverlay);
 });
 var editor = CodeMirror.fromTextArea(document.getElementById("code"), {mode: "mustache"});
+
 
 
   </script>

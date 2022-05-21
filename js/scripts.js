@@ -1,14 +1,14 @@
 const html = CodeMirror(document.querySelector("html-code"), {
   lineNumbers: true,
-  theme: "darcula",
+  theme: "darcula-html",
   tabSize: 2,
-  mode: "xml",
+  mode: "htmlmixed",
   autoCloseTags: true,
   autoCloseBrackets: true,
 });
 const css = CodeMirror(document.querySelector("css-code"), {
   lineNumbers: true,
-  theme: "darcula",
+  theme: "darcula-css",
   tabSize: 2,
   mode: "css",
   autoCloseTags: true,
@@ -16,7 +16,7 @@ const css = CodeMirror(document.querySelector("css-code"), {
 });
 const js = CodeMirror(document.querySelector("js-code"), {
   lineNumbers: true,
-  theme: "darcula",
+  theme: "darcula-js",
   tabSize: 2,
   mode: "javascript",
   autoCloseTags: true,
@@ -29,6 +29,8 @@ w = window.innerWidth;
 html.setSize("100%", "100%");
 css.setSize("100%", "100%");
 js.setSize("100%", "100%");
+
+html.focus();
 
 function view() {
   let view = document.querySelector("iframe").contentWindow.document;
@@ -50,6 +52,12 @@ function view() {
       "</script" +
       ">"
   );
+  if (html.getValue().includes("<style")) {
+    focusField(html, "<style", css);
+  }
+  if (html.getValue().includes("<script")) {
+    focusField(html, "<script", js);
+  }
   if (html.getValue().includes("<!-- save -->")) {
     saveAction(html, "<!-- save -->", "html");
   }
@@ -108,4 +116,9 @@ function saveAction(code, comment, ex) {
       prompt("Download " + ex + " file.", ex) + "." + ex,
       code.getValue()
     );
+}
+
+function focusField(ele, tag, target) {
+  ele.setValue(ele.getValue().replace(tag, ""));
+  target.focus();
 }
