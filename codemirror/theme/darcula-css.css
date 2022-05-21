@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap");
+/**
+    Name: IntelliJ IDEA darcula-css theme
+    From IntelliJ IDEA by JetBrains
+ */
+
+.cm-s-darcula-css {
+  font-family: "Cutive Mono", monospace;
+  /*font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif;*/
+}
+
+.cm-s-darcula-css.CodeMirror {
+  background: #000000;
+  color: #aaaaaa;
+}
+
+.cm-s-darcula-css span.cm-meta {
+  color: #bbb529;
+}
+
+.cm-s-darcula-css span.cm-number {
+  color: #6897bb;
+}
+
+.cm-s-darcula-css span.cm-keyword {
+  color: #cc7832;
+  line-height: 1em;
+  font-weight: bold;
+}
+
+.cm-s-darcula-css span.cm-def {
+  color: #a9b7c6;
+  font-style: italic;
+}
+
+.cm-s-darcula-css span.cm-variable {
+  color: #a9b7c6;
+}
+
+.cm-s-darcula-css span.cm-variable-2 {
+  color: #a9b7c6;
+}
+
+.cm-s-darcula-css span.cm-variable-3 {
+  color: #9876aa;
+}
+
+.cm-s-darcula-css span.cm-type {
+  color: #aabbcc;
+  font-weight: bold;
+}
+
+.cm-s-darcula-css span.cm-property {
+  color: #ffc66d;
+}
+
+.cm-s-darcula-css span.cm-operator {
+  color: #a9b7c6;
+}
+
+.cm-s-darcula-css span.cm-string {
+  color: #6a8759;
+}
+
+.cm-s-darcula-css span.cm-string-2 {
+  color: #6a8759;
+}
+
+.cm-s-darcula-css span.cm-comment {
+  color: #61a151;
+  font-style: italic;
+}
+
+.cm-s-darcula-css span.cm-link {
+  color: #cc7832;
+}
+
+.cm-s-darcula-css span.cm-atom {
+  color: #cc7832;
+}
+
+.cm-s-darcula-css span.cm-error {
+  color: #bc3f3c;
+}
+
+.cm-s-darcula-css span.cm-tag {
+  color: #629755;
+  font-weight: bold;
+  font-style: italic;
+  /*text-decoration: underline;*/
+}
+
+.cm-s-darcula-css span.cm-attribute {
+  color: #6897bb;
+}
+
+.cm-s-darcula-css span.cm-qualifier {
+  color: #6a8759;
+}
+
+.cm-s-darcula-css span.cm-bracket {
+  color: #a9b7c6;
+}
+
+.cm-s-darcula-css span.cm-builtin {
+  color: #ff9e59;
+}
+
+.cm-s-darcula-css span.cm-special {
+  color: #ff9e59;
+}
+
+.cm-s-darcula-css span.cm-matchhighlight {
+  color: #ffffff;
+  background-color: rgba(50, 89, 48, 0.7);
+  font-weight: normal;
+}
+
+.cm-s-darcula-css span.cm-searching {
+  color: #ffffff;
+  background-color: rgba(61, 115, 59, 0.7);
+  font-weight: normal;
+}
+
+.cm-s-darcula-css .CodeMirror-cursor {
+  border-left: 1px solid #a9b7c6;
+}
+
+.cm-s-darcula-css .CodeMirror-activeline-background {
+  background: #323232;
+}
+
+.cm-s-darcula-css .CodeMirror-gutters {
+  background: rgba(0, 130, 190, 0.5);
+  border-right: 1px solid #313335;
+}
+
+.cm-s-darcula-css .CodeMirror-guttermarker {
+  color: #ffee80;
+}
+
+.cm-s-darcula-css .CodeMirror-guttermarker-subtle {
+  color: #d0d0d0;
+}
+
+.cm-s-darcula-css .CodeMirrir-linenumber {
+  color: #606366;
+}
+
+.cm-s-darcula-css .CodeMirror-matchingbracket {
+  background-color: #3b514d;
+  color: #ffef28 !important;
+  font-weight: bold;
+}
+
+.cm-s-darcula-css div.CodeMirror-selected {
+  background: #214283;
+}
+
+.CodeMirror-hints.darcula-css {
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  color: #9c9e9e;
+  background-color: #3b3e3f !important;
+}
+
+.CodeMirror-hints.darcula-css .CodeMirror-hint-active {
+  background-color: #494d4e !important;
+  color: #9c9e9e !important;
+}
