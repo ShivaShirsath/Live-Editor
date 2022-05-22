@@ -52,12 +52,15 @@ function view() {
       "</script" +
       ">"
   );
-  if (html.getValue().includes("<style")) {
-    focusField(html, "<style", css);
+  if (!html.getValue().includes("<html")) {
+    if (html.getValue().includes("<style")) {
+      focusField(html, "style", css);
+    }
+    if (html.getValue().includes("<script")) {
+      focusField(html, "script", js); 
+    }
   }
-  if (html.getValue().includes("<script")) {
-    focusField(html, "<script", js);
-  }
+  
   if (html.getValue().includes("<!-- save -->")) {
     saveAction(html, "<!-- save -->", "html");
   }
@@ -119,6 +122,20 @@ function saveAction(code, comment, ex) {
 }
 
 function focusField(ele, tag, target) {
-  ele.setValue(ele.getValue().replace(tag, ""));
+  tags="";
+  if (ele.getValue().includes("</"+tag+">")) 
+    tags=ele.getValue().substring(
+      ele.getValue().indexOf("<"+tag ), 
+      ele.getValue().indexOf("</" + tag + ">") + tag.length + 3
+    );
+  else
+    tags="";
+    
+  ele.setValue(ele.getValue().replace(tags==""? "<" + tag : tags, ""));
   target.focus();
+  target.setValue(target.getValue() + "\n" + tags.substring(
+      tags.indexOf(">") +1,
+      tags.lastIndexOf(">") - tag.length -2
+  )
+  );
 }
