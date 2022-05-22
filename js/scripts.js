@@ -132,10 +132,10 @@ function focusField(ele, tag, target) {
     tags="";
     
   ele.setValue(ele.getValue().replace(tags==""? "<" + tag : tags, ""));
-  target.focus();
   target.setValue(target.getValue() + "\n" + tags.substring(
       tags.indexOf(">") +1,
       tags.lastIndexOf(">") - tag.length -2
   )
   );
+  target.focus();
 }
