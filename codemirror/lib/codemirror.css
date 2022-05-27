@@ -3,7 +3,7 @@
 .CodeMirror {
   /* Set height, width, borders, and global font properties here */
   font-family: monospace;
-  height: 300px;
+  height: 100%;
   color: black;
   direction: ltr;
 }
@@ -11,13 +11,13 @@
 /* PADDING */
 
 .CodeMirror-lines {
-  padding: 4px 0;
+  padding: .8vmin 0;
   /* Vertical padding around content */
 }
 
 .CodeMirror pre.CodeMirror-line,
 .CodeMirror pre.CodeMirror-line-like {
-  padding: 0 4px;
+  padding: 0 .8vmin;
   /* Horizontal padding of content */
 }
 
@@ -30,7 +30,7 @@
 /* GUTTER */
 
 .CodeMirror-gutters {
-  border-right: 1px solid #ddd;
+  border-right: .5vmin solid #ddd;
   background-color: #f7f7f7;
   white-space: nowrap;
 }
@@ -38,10 +38,10 @@
 .CodeMirror-linenumbers {}
 
 .CodeMirror-linenumber {
-  padding: 0 3px 0 5px;
-  min-width: 20px;
+  padding: 0 .6vmin 0 .8vmin;
+  min-width: 1vmin;
   text-align: right;
-  color: #999;
+  color: #aaa;
   white-space: nowrap;
 }
 
@@ -56,14 +56,14 @@
 /* CURSOR */
 
 .CodeMirror-cursor {
-  border-left: 1px solid black;
+  border-left: .5vmin solid black;
   border-right: none;
   width: 0;
 }
 
 /* Shown when moving in bi-directional text */
 .CodeMirror div.CodeMirror-secondarycursor {
-  border-left: 1px solid silver;
+  border-left: .5vmin solid silver;
 }
 
 .cm-fat-cursor .CodeMirror-cursor {
@@ -140,7 +140,7 @@
 }
 
 .CodeMirror-ruler {
-  border-left: 1px solid #ccc;
+  border-left: .5vmin solid #ccc;
   top: 0;
   bottom: 0;
   position: absolute;
@@ -399,7 +399,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
 
 .CodeMirror-lines {
   cursor: text;
-  min-height: 1px;
+  min-height: .5vmin;
   /* prevents collapsing before first draw */
 }
 
@@ -445,7 +445,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
 .CodeMirror-linewidget {
   position: relative;
   z-index: 2;
-  padding: 0.1px;
+  padding: 0.05vmin;
   /* Force widget margins to stay inside of the container */
 }
 
@@ -531,7 +531,7 @@ div.CodeMirror-dragcursors {
 
 /* Used to force a border model for a node */
 .cm-force-border {
-  padding-right: .1px;
+  padding-right: .05vmin;
 }
 
 @media print {

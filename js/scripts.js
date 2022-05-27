@@ -30,9 +30,22 @@ html.setSize("100%", "100%");
 css.setSize("100%", "100%");
 js.setSize("100%", "100%");
 
+function full(){
+    if((window.fullScreen) || (window.innerWidth == screen.width && window.innerHeight == screen.height)) {
+        
+    } else {
+        document.body.requestFullscreen();
+    }
+}
+
 html.focus();
 
+/*
+html.addEventListener("focus", function(){
+    
+}); */
 function view() {
+   /* */
   let view = document.querySelector("iframe").contentWindow.document;
   view.open();
   view.write(
@@ -52,6 +65,7 @@ function view() {
       "</script" +
       ">"
   );
+ 
   if (!html.getValue().includes("<html")) {
     if (html.getValue().includes("<style")) {
       focusField(html, "style", css);
@@ -139,3 +153,4 @@ function focusField(ele, tag, target) {
   );
   target.focus();
 }
+
