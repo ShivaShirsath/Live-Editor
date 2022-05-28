@@ -12,7 +12,7 @@
 :is(stator, rotor) {
   display: flex;
   justify-content: space-evenly;
-  align-items: center;
+  align-items: bottom;
   width: 100vw;
   height: 100vh;
 }
@@ -37,14 +37,14 @@ iframe,
   touch-action: none;
 }
 
+:is(html-code, css-code, js-code),
+:is(html-code, css-code, js-code):focus {
+  height: calc(98% * .333);
+}
+
 @media (orientation: portrait) {
   :is(stator, rotor) {
     flex-direction: column;
-  }
-  :is(html-code, css-code, js-code),
-  :is(html-code, css-code, js-code):focus {
-    width: 100%;
-    height: calc(98% * .333);
   }
 }
 
@@ -54,10 +54,5 @@ iframe,
   }
   rotor {
     flex-direction: column;
-  }
-  :is(html-code, css-code, js-code), 
-  :is(html-code, css-code, js-code):focus {
-    width: 100%;
-    height: calc(98% * .333);
   }
 }
