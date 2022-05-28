@@ -8,7 +8,10 @@
   resize: none;
   box-sizing: border-box;
 }
-
+body {
+  display: flex;
+  align-items: bottom;
+}
 :is(stator, rotor) {
   display: flex;
   justify-content: space-evenly;
