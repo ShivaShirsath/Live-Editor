@@ -13,6 +13,7 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  flex-direction: column;
   width: 100vw;
   height: 100vh;
 }
@@ -22,9 +23,7 @@ rotor {
   height: 99%;
 }
 
-iframe,
-:is(html-code, css-code, js-code), 
-:is(html-code, css-code, js-code):focus {
+:is(iframe, code, code :focus) {
   font-size: 5vmin;
   cursor: 5vmin;
   width: 100%;
@@ -37,13 +36,12 @@ iframe,
   touch-action: none;
 }
 
-:is(html-code, css-code, js-code),
-:is(html-code, css-code, js-code):focus {
+:is(code, code :focus) {
   height: calc(98% * .333);
 }
 
 @media (orientation: portrait) {
-  :is(stator, rotor) {
+  stator {
     flex-direction: column;
   }
 }
@@ -51,8 +49,5 @@ iframe,
 @media (orientation: landscape) {
   stator {
     flex-direction: row;
-  }
-  rotor {
-    flex-direction: column;
   }
 }

@@ -1,4 +1,4 @@
-const html = CodeMirror(document.querySelector("html-code"), {
+const html = CodeMirror(document.querySelector("#html"), {
   lineNumbers: true,
   theme: "darcula-html",
   tabSize: 2,
@@ -6,7 +6,7 @@ const html = CodeMirror(document.querySelector("html-code"), {
   autoCloseTags: true,
   autoCloseBrackets: true,
 });
-const css = CodeMirror(document.querySelector("css-code"), {
+const css = CodeMirror(document.querySelector("#css"), {
   lineNumbers: true,
   theme: "darcula-css",
   tabSize: 2,
@@ -14,7 +14,7 @@ const css = CodeMirror(document.querySelector("css-code"), {
   autoCloseTags: true,
   autoCloseBrackets: true,
 });
-const js = CodeMirror(document.querySelector("js-code"), {
+const js = CodeMirror(document.querySelector("#js"), {
   lineNumbers: true,
   theme: "darcula-js",
   tabSize: 2,
@@ -23,16 +23,13 @@ const js = CodeMirror(document.querySelector("js-code"), {
   autoCloseBrackets: true,
 });
 
-h = window.innerHeight;
-w = window.innerWidth;
-
 html.setSize("100%", "100%");
 css.setSize("100%", "100%");
 js.setSize("100%", "100%");
 
 function full(){
     if((window.fullScreen) || (window.innerWidth == screen.width && window.innerHeight == screen.height)) {
-        
+        // TODO
     } else {
         document.body.requestFullscreen();
     }
@@ -41,11 +38,9 @@ function full(){
 html.focus();
 
 /*
-html.addEventListener("focus", function(){
-    
-}); */
+html.addEventListener("focus", function(){});
+*/
 function view() {
-   /* */
   let view = document.querySelector("iframe").contentWindow.document;
   view.open();
   view.write(
@@ -74,7 +69,6 @@ function view() {
       focusField(html, "script", js); 
     }
   }
-  
   if (html.getValue().includes("<!-- save -->")) {
     saveAction(html, "<!-- save -->", "html");
   }
@@ -143,14 +137,14 @@ function focusField(ele, tag, target) {
       ele.getValue().indexOf("</" + tag + ">") + tag.length + 3
     );
   else
-    tags="";
-    
+    tags=""; 
   ele.setValue(ele.getValue().replace(tags==""? "<" + tag : tags, ""));
-  target.setValue(target.getValue() + "\n" + tags.substring(
+  target.setValue(
+    target.getValue() + "\n" +
+    tags.substring(
       tags.indexOf(">") +1,
       tags.lastIndexOf(">") - tag.length -2
-  )
+    )
   );
   target.focus();
 }
-
