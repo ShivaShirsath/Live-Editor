@@ -92,34 +92,18 @@
   caret-color: transparent;
 }
 
-@-moz-keyframes blink {
-  0% {}
+:is(@-moz-keyframes, @-webkit-keyframes, @keyframes) blink {
+  0% {
+    background-color: red;
+  }
 
   50% {
     background-color: transparent;
   }
 
-  100% {}
-}
-
-@-webkit-keyframes blink {
-  0% {}
-
-  50% {
-    background-color: transparent;
+  100% {
+    background-color: green;
   }
-
-  100% {}
-}
-
-@keyframes blink {
-  0% {}
-
-  50% {
-    background-color: transparent;
-  }
-
-  100% {}
 }
 
 /* Can style cursor different in overwrite (non-insert) mode */
