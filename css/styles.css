@@ -1,4 +1,4 @@
-* {
+9* {
   padding: 0 0;
   margin: 0 0;
   border: none;
@@ -23,7 +23,7 @@ rotor {
   height: 99%;
 }
 
-:is(iframe, code, code :focus) {
+iframe, code {
   font-size: 5vmin;
   cursor: 5vmin;
   width: 100%;
