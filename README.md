@@ -7,7 +7,7 @@ HTML, CSS, JavaScript
     ぷ
   </a>
   <br>
-  <a href=https://live-editor.42web.io>
+  <a href=http://live-editor.42web.io>
     ⋅
   </a>
 </h1>
