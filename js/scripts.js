@@ -18,9 +18,14 @@ const js = CodeMirror(document.querySelector("#js"), {
   lineNumbers: true,
   theme: "darcula-js",
   tabSize: 2,
-  mode: "javascript",
+  extraKeys: {"Ctrl-Space": "autocomplete"},
+  mode: {name: "javascript", globalVars: true},
   autoCloseTags: true,
   autoCloseBrackets: true,
+});
+
+js.on('keyup', function(cm){
+    CodeMirror.commands.autocomplete(js);
 });
 
 html.setSize("100%", "100%");
