@@ -46,19 +46,3 @@ async function networkAndCache(req) {
     return cached;
   }
 }
-/*
-"codemirror/lib/codemirror.css",
-  "codemirror/theme/darcula-html.css",
-  "codemirror/theme/darcula-css.css",
-  "codemirror/theme/darcula-js.css",
-  "codemirror/lib/codemirror.js",
-  "codemirror/mode/xml/xml.js",
-  "codemirror/mode/css/css.js",
-  "codemirror/mode/javascript/javascript.js",
-  "codemirror/addon/edit/closebrackets.js",
-  "codemirror/addon/edit/closetag.js",
-  "codemirror/addon/edit/continuelist.js",
-  "codemirror/addon/edit/matchbrackets.js",
-  "codemirror/addon/edit/matchtags.js",
-  "codemirror/addon/edit/trailingspace.js",
-*/
