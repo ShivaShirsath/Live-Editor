@@ -140,7 +140,7 @@ function focusField(ele, tag, target) {
     tags=""; 
   ele.setValue(ele.getValue().replace(tags==""? "<" + tag : tags, ""));
   target.setValue(
-    target.getValue() + "\n" +
+    target.getValue() +
     tags.substring(
       tags.indexOf(">") +1,
       tags.lastIndexOf(">") - tag.length -2
