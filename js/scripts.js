@@ -3,6 +3,7 @@ const html = CodeMirror(document.querySelector("#html"), {
   theme: "darcula-html",
   tabSize: 2,
   mode: "htmlmixed",
+  extraKeys: {"Ctrl-Space": "autocomplete"},
   autoCloseTags: true,
   autoCloseBrackets: true,
 });
@@ -11,6 +12,7 @@ const css = CodeMirror(document.querySelector("#css"), {
   theme: "darcula-css",
   tabSize: 2,
   mode: "css",
+  extraKeys: {"Ctrl-Space": "autocomplete"},
   autoCloseTags: true,
   autoCloseBrackets: true,
 });
@@ -39,6 +41,7 @@ html.on('keyup', function(cm){
 });
 
 function autoComplete(editor){
+    
     kc = editor.getValue().charCodeAt(editor.getValue().length - 1);
     if (
         kc > 64 && kc < 91  ||
@@ -86,6 +89,10 @@ function view() {
       ">"
   );
  
+  unDo(html);
+  unDo(css);
+  unDo(js);
+   
   if (!html.getValue().includes("<html")) {
     if (html.getValue().includes("<style")) {
       focusField(html, "style", css);
@@ -105,7 +112,13 @@ function view() {
   }
   view.close();
 }
-
+function unDo(editor){
+    if (editor.getValue().includes("??z")){
+      for(i=0; i<3; i++){
+          editor.undo(); 
+      }
+  }
+}
 function download(filename, text) {
   var element = document.createElement("a");
   element.setAttribute(
