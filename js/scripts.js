@@ -24,10 +24,30 @@ const js = CodeMirror(document.querySelector("#js"), {
   autoCloseBrackets: true,
 });
 
+
 js.on('keyup', function(cm){
-    CodeMirror.commands.autocomplete(js);
+    autoComplete(js);
 });
 
+css.on('keyup', function(e){
+    autoComplete(css); 
+});
+
+html.on('keyup', function(cm){
+    //if(html.getValue().charCodeAt(html.getValue().length - 1) == "<".charCodeAt(0))
+    autoComplete(html);
+});
+
+function autoComplete(editor){
+    kc = editor.getValue().charCodeAt(editor.getValue().length - 1);
+    if (
+        kc > 64 && kc < 91  ||
+        kc > 96 && kc < 123 || 
+        kc == "<".charCodeAt(0)
+    ) {
+        CodeMirror.commands.autocomplete(editor);
+    }
+}
 html.setSize("100%", "100%");
 css.setSize("100%", "100%");
 js.setSize("100%", "100%");
