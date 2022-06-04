@@ -3,72 +3,94 @@ const html = CodeMirror(document.querySelector("#html"), {
   theme: "darcula-html",
   tabSize: 2,
   mode: "htmlmixed",
-  extraKeys: { "Ctrl-Space": "autocomplete" },
+  extraKeys: { "Ctrl-Space": "autocomplete", "Ctrl-Q": function(cm){ cm.foldCode(cm.getCursor()); } },
   autoCloseTags: true,
   autoCloseBrackets: true,
+  foldGutter: true,
+  gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
 });
+
 const css = CodeMirror(document.querySelector("#css"), {
   lineNumbers: true,
   theme: "darcula-css",
   tabSize: 2,
   mode: "css",
-  extraKeys: { "Ctrl-Space": "autocomplete" },
+  extraKeys: { "Ctrl-Space": "autocomplete", "Ctrl-Q": function(cm){ cm.foldCode(cm.getCursor()); } },
   autoCloseTags: true,
   autoCloseBrackets: true,
+  foldGutter: true,
+  gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
 });
 const js = CodeMirror(document.querySelector("#js"), {
   lineNumbers: true,
   theme: "darcula-js",
   tabSize: 2,
-  extraKeys: { "Ctrl-Space": "autocomplete" },
+  extraKeys: { "Ctrl-Space": "autocomplete", "Ctrl-Q": function(cm){ cm.foldCode(cm.getCursor()); } },
   mode: { name: "javascript", globalVars: true },
   autoCloseTags: true,
   autoCloseBrackets: true,
+  foldGutter: true,
+  gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
 });
 
-js.on("keyup", function (cm) {
-  autoComplete(js);
-});
+html.setValue(
+  "<html>\n" +
+  "\t<head>\n" +
+  "\t\t<title>\n" +
+  "\t\t\tMy Website\n" +
+  "\t\t</title>\n" +
+  "\t</head>\n" +
+  "\t<body>\n"+
+  "\t\t<h1 align=center>Welcome to my WebSite</h1>" +
+  "\t</body>\n" +
+  "</html>"
+);
 
-css.on("keyup", function (e) {
-  autoComplete(css);
-});
+css.setValue(
+  "*{\n" + 
+  "\tpadding: 0 0;\n" + 
+  "\tmargin: 0 0;\n" +
+  "}" + "\n" +
+  "h1 {" + "\n" +
+  "\tcolor: orange;\n" +
+  "}"
+);
 
-html.on("keyup", function (cm) {
-  //if(html.getValue().charCodeAt(html.getValue().length - 1) == "<".charCodeAt(0))
-  autoComplete(html);
-});
+js.setValue(
+  "function callMe(){\n" +
+  "\talert(\n" +
+  "\t\t'Hi, i am alert !'\n" +
+  "\t);" +
+  "}"
+);
+
+autoComplete(js);
+autoComplete(css);
+autoComplete(html);
 
 function autoComplete(editor) {
-  kc = editor.getValue().charCodeAt(editor.getValue().length - 1);
-  if (
-    (kc > 64 && kc < 91) ||
-    (kc > 96 && kc < 123) ||
-    kc == "<".charCodeAt(0)
-  ) {
-  CodeMirror.commands.autocomplete(editor);
-  }
+    
+  editor.on("keyup", 
+    function(cm, e) {
+      if ([37, 38, 39, 40].indexOf(e.keyCode) < 0) {
+        editor.execCommand("autocomplete");
+      }
+    }
+  );
 }
+
 html.setSize("100%", "100%");
 css.setSize("100%", "100%");
 js.setSize("100%", "100%");
 
-function full() {
-  if (
-    window.fullScreen ||
-    (window.innerWidth == screen.width && window.innerHeight == screen.height)
-  ) {
-    // TODO
-  } else {
-    document.body.requestFullscreen();
-  }
-}
-
 html.focus();
 
-/*
-html.addEventListener("focus", function(){});
-*/
+CodeMirror.commands.foldAll(html);
+CodeMirror.commands.foldAll(css);
+CodeMirror.commands.foldAll(js);
+
+view();
+
 function view() {
   let view = document.querySelector("iframe").contentWindow.document;
   view.open();
@@ -93,7 +115,7 @@ function view() {
   unDo(html);
   unDo(css);
   unDo(js);
-
+  
   if (!html.getValue().includes("<html")) {
     if (html.getValue().includes("<style")) {
       focusField(html, "style", css);
@@ -113,6 +135,7 @@ function view() {
   }
   view.close();
 }
+
 function unDo(editor) {
   if (editor.getValue().includes("??z")) {
     for (i = 0; i < 3; i++) {
@@ -120,6 +143,7 @@ function unDo(editor) {
     }
   }
 }
+
 function download(filename, text) {
   var element = document.createElement("a");
   element.setAttribute(
@@ -131,6 +155,27 @@ function download(filename, text) {
   document.body.appendChild(element);
   element.click();
   document.body.removeChild(element);
+}
+
+function focusField(ele, tag, target) {
+  tags = "";
+  if (ele.getValue().includes("</" + tag + ">"))
+    tags = ele
+      .getValue()
+      .substring(
+        ele.getValue().indexOf("<" + tag),
+        ele.getValue().indexOf("</" + tag + ">") + tag.length + 3
+      );
+  else tags = "";
+  ele.setValue(ele.getValue().replace(tags == "" ? "<" + tag : tags, ""));
+  target.setValue(
+    target.getValue() +
+      tags.substring(
+        tags.indexOf(">") + 1,
+        tags.lastIndexOf(">") - tag.length - 2
+      )
+  );
+  target.focus();
 }
 
 function saveAction(code, comment, ex) {
@@ -166,25 +211,4 @@ function saveAction(code, comment, ex) {
       prompt("Download " + ex + " file.", ex) + "." + ex,
       code.getValue()
     );
-}
-
-function focusField(ele, tag, target) {
-  tags = "";
-  if (ele.getValue().includes("</" + tag + ">"))
-    tags = ele
-      .getValue()
-      .substring(
-        ele.getValue().indexOf("<" + tag),
-        ele.getValue().indexOf("</" + tag + ">") + tag.length + 3
-      );
-  else tags = "";
-  ele.setValue(ele.getValue().replace(tags == "" ? "<" + tag : tags, ""));
-  target.setValue(
-    target.getValue() +
-      tags.substring(
-        tags.indexOf(">") + 1,
-        tags.lastIndexOf(">") - tag.length - 2
-      )
-  );
-  target.focus();
 }

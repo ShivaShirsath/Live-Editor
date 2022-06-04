@@ -11,6 +11,7 @@
   -moz-box-shadow: 1vmin 1.5vmin 2vmin rgba(0, 255, 0, 0.2);
   box-shadow: 1vmin 1.5vmin 2vmin rgba(0, 255, 0, 0.2);
   border-radius: 2.5vmin;
+  
   border: 0.2vmin dashed orange;
 
   background: white;
@@ -32,8 +33,7 @@
   color: black;
   cursor: pointer;
 }
-
 li.CodeMirror-hint-active {
-  background: #f80;
+  background: rgba(255, 127, 0, .5);
   color: white;
 }

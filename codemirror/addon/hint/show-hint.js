@@ -511,7 +511,7 @@
 
   var defaultOptions = {
     hint: CodeMirror.hint.auto,
-    completeSingle: true,
+    completeSingle: false,
     alignWithWord: true,
     closeCharacters: /[\s()\[\]{};:>,]/,
     closeOnPick: true,

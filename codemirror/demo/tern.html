@@ -47,65 +47,8 @@
 
 <article>
   <h2>Tern Demo</h2>
-  <form><textarea id="code" name="code">// Use ctrl-space to complete something
-// Put the cursor in or after an expression, press ctrl-o to
-// find its type
-
-var foo = ["array", "of", "strings"];
-var bar = foo.slice(0, 2).join("").split("a")[0];
-
-// Works for locally defined types too.
-
-function CTor() { this.size = 10; }
-CTor.prototype.hallo = "hallo";
-
-var baz = new CTor;
-baz.
-
-// You can press ctrl-q when the cursor is on a variable name to
-// rename it. Try it with CTor...
-
-// When the cursor is in an argument list, the arguments are
-// shown below the editor.
-
-[1].reduce(  );
-
-// And a little more advanced code...
-
-(function(exports) {
-  exports.randomElt = function(arr) {
-    return arr[Math.floor(arr.length * Math.random())];
-  };
-  exports.strList = "foo".split("");
-  exports.intList = exports.strList.map(function(s) { return s.charCodeAt(0); });
-})(window.myMod = {});
-
-var randomStr = myMod.randomElt(myMod.strList);
-var randomInt = myMod.randomElt(myMod.intList);
+  <form><textarea id="code" name="code">"".
 </textarea></form>
-
-  <p>Demonstrates integration of <a href="http://ternjs.net/">Tern</a>
-    and CodeMirror. The following keys are bound:</p>
-
-  <dl>
-    <dt>Ctrl-Space</dt>
-    <dd>Autocomplete</dd>
-    <dt>Ctrl-O</dt>
-    <dd>Find docs for the expression at the cursor</dd>
-    <dt>Ctrl-I</dt>
-    <dd>Find type at cursor</dd>
-    <dt>Alt-.</dt>
-    <dd>Jump to definition (Alt-, to jump back)</dd>
-    <dt>Ctrl-Q</dt>
-    <dd>Rename variable</dd>
-    <dt>Ctrl-.</dt>
-    <dd>Select all occurrences of a variable</dd>
-  </dl>
-
-  <p>Documentation is sparse for now. See the top of
-    the <a href="../addon/tern/tern.js">script</a> for a rough API
-    overview.</p>
-
   <script>
   function getURL(url, c) {
     var xhr = new XMLHttpRequest();
@@ -140,11 +83,6 @@ var randomInt = myMod.randomElt(myMod.intList);
     lineNumbers: true,
     mode: "javascript"
   });
-
-
-
-
-
 
   </script>
 
