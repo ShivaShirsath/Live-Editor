@@ -69,14 +69,20 @@ autoComplete(css);
 autoComplete(html);
 
 function autoComplete(editor) {
-    
-  editor.on("keyup", 
-    function(cm, e) {
-      if ([37, 38, 39, 40].indexOf(e.keyCode) < 0) {
-        editor.execCommand("autocomplete");
+  kc = editor.getValue().charCodeAt(editor.getValue().length - 1);
+  if (
+    (kc > 64 && kc < 91) ||
+    (kc > 96 && kc < 123) ||
+    kc == "<".charCodeAt(0)
+  ) {
+    editor.on("keyup", 
+      function(cm, e) {
+        if ([37, 38, 39, 40].indexOf(e.keyCode) < 0) {
+          editor.execCommand("autocomplete");
+        }
       }
-    }
-  );
+    );
+  }
 }
 
 html.setSize("100%", "100%");
