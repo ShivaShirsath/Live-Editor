@@ -3,15 +3,15 @@
   z-index: 10;
   overflow: hidden;
   list-style: none;
-  
+
   margin: 0 0;
   padding: 1vmin 1vmin;
 
-  -webkit-box-shadow: 1vmin 1.5vmin 2vmin rgba(0, 255, 0, .2);
-  -moz-box-shadow: 1vmin 1.5vmin 2vmin rgba(0, 255, 0, .2);
-  box-shadow: 1vmin 1.5vmin 2vmin rgba(0, 255, 0, .2);
+  -webkit-box-shadow: 1vmin 1.5vmin 2vmin rgba(0, 255, 0, 0.2);
+  -moz-box-shadow: 1vmin 1.5vmin 2vmin rgba(0, 255, 0, 0.2);
+  box-shadow: 1vmin 1.5vmin 2vmin rgba(0, 255, 0, 0.2);
   border-radius: 2.5vmin;
-  border: .2vmin dashed orange;
+  border: 0.2vmin dashed orange;
 
   background: white;
   font-size: 5vmin;
@@ -19,15 +19,14 @@
 
   max-height: 25vh;
   max-width: 75vw;
-  overflow-y: auto;
-  overflow-x: auto;
+  overflow: auto;
 }
 ::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 .CodeMirror-hint {
   margin: 0 0;
-  padding: .6vmin .6vmin;
+  padding: 0.6vmin 0.6vmin;
   border-radius: 2.5vmin;
   white-space: pre;
   color: black;

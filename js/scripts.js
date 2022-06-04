@@ -3,7 +3,7 @@ const html = CodeMirror(document.querySelector("#html"), {
   theme: "darcula-html",
   tabSize: 2,
   mode: "htmlmixed",
-  extraKeys: {"Ctrl-Space": "autocomplete"},
+  extraKeys: { "Ctrl-Space": "autocomplete" },
   autoCloseTags: true,
   autoCloseBrackets: true,
 });
@@ -12,7 +12,7 @@ const css = CodeMirror(document.querySelector("#css"), {
   theme: "darcula-css",
   tabSize: 2,
   mode: "css",
-  extraKeys: {"Ctrl-Space": "autocomplete"},
+  extraKeys: { "Ctrl-Space": "autocomplete" },
   autoCloseTags: true,
   autoCloseBrackets: true,
 });
@@ -20,47 +20,48 @@ const js = CodeMirror(document.querySelector("#js"), {
   lineNumbers: true,
   theme: "darcula-js",
   tabSize: 2,
-  extraKeys: {"Ctrl-Space": "autocomplete"},
-  mode: {name: "javascript", globalVars: true},
+  extraKeys: { "Ctrl-Space": "autocomplete" },
+  mode: { name: "javascript", globalVars: true },
   autoCloseTags: true,
   autoCloseBrackets: true,
 });
 
-
-js.on('keyup', function(cm){
-    autoComplete(js);
+js.on("keyup", function (cm) {
+  autoComplete(js);
 });
 
-css.on('keyup', function(e){
-    autoComplete(css); 
+css.on("keyup", function (e) {
+  autoComplete(css);
 });
 
-html.on('keyup', function(cm){
-    //if(html.getValue().charCodeAt(html.getValue().length - 1) == "<".charCodeAt(0))
-    autoComplete(html);
+html.on("keyup", function (cm) {
+  //if(html.getValue().charCodeAt(html.getValue().length - 1) == "<".charCodeAt(0))
+  autoComplete(html);
 });
 
-function autoComplete(editor){
-    
-    kc = editor.getValue().charCodeAt(editor.getValue().length - 1);
-    if (
-        kc > 64 && kc < 91  ||
-        kc > 96 && kc < 123 || 
-        kc == "<".charCodeAt(0)
-    ) {
-        CodeMirror.commands.autocomplete(editor);
-    }
+function autoComplete(editor) {
+  kc = editor.getValue().charCodeAt(editor.getValue().length - 1);
+  if (
+    (kc > 64 && kc < 91) ||
+    (kc > 96 && kc < 123) ||
+    kc == "<".charCodeAt(0)
+  ) {
+  CodeMirror.commands.autocomplete(editor);
+  }
 }
 html.setSize("100%", "100%");
 css.setSize("100%", "100%");
 js.setSize("100%", "100%");
 
-function full(){
-    if((window.fullScreen) || (window.innerWidth == screen.width && window.innerHeight == screen.height)) {
-        // TODO
-    } else {
-        document.body.requestFullscreen();
-    }
+function full() {
+  if (
+    window.fullScreen ||
+    (window.innerWidth == screen.width && window.innerHeight == screen.height)
+  ) {
+    // TODO
+  } else {
+    document.body.requestFullscreen();
+  }
 }
 
 html.focus();
@@ -88,17 +89,17 @@ function view() {
       "</script" +
       ">"
   );
- 
+
   unDo(html);
   unDo(css);
   unDo(js);
-   
+
   if (!html.getValue().includes("<html")) {
     if (html.getValue().includes("<style")) {
       focusField(html, "style", css);
     }
     if (html.getValue().includes("<script")) {
-      focusField(html, "script", js); 
+      focusField(html, "script", js);
     }
   }
   if (html.getValue().includes("<!-- save -->")) {
@@ -112,11 +113,11 @@ function view() {
   }
   view.close();
 }
-function unDo(editor){
-    if (editor.getValue().includes("??z")){
-      for(i=0; i<3; i++){
-          editor.undo(); 
-      }
+function unDo(editor) {
+  if (editor.getValue().includes("??z")) {
+    for (i = 0; i < 3; i++) {
+      editor.undo();
+    }
   }
 }
 function download(filename, text) {
@@ -168,21 +169,22 @@ function saveAction(code, comment, ex) {
 }
 
 function focusField(ele, tag, target) {
-  tags="";
-  if (ele.getValue().includes("</"+tag+">")) 
-    tags=ele.getValue().substring(
-      ele.getValue().indexOf("<"+tag ), 
-      ele.getValue().indexOf("</" + tag + ">") + tag.length + 3
-    );
-  else
-    tags=""; 
-  ele.setValue(ele.getValue().replace(tags==""? "<" + tag : tags, ""));
+  tags = "";
+  if (ele.getValue().includes("</" + tag + ">"))
+    tags = ele
+      .getValue()
+      .substring(
+        ele.getValue().indexOf("<" + tag),
+        ele.getValue().indexOf("</" + tag + ">") + tag.length + 3
+      );
+  else tags = "";
+  ele.setValue(ele.getValue().replace(tags == "" ? "<" + tag : tags, ""));
   target.setValue(
     target.getValue() +
-    tags.substring(
-      tags.indexOf(">") +1,
-      tags.lastIndexOf(">") - tag.length -2
-    )
+      tags.substring(
+        tags.indexOf(">") + 1,
+        tags.lastIndexOf(">") - tag.length - 2
+      )
   );
   target.focus();
 }
