@@ -60,7 +60,7 @@ js.setValue(
   "function callMe(){\n" +
   "\talert(\n" +
   "\t\t'Hi, i am alert !'\n" +
-  "\t);" +
+  "\t);\n" +
   "}"
 );
 
