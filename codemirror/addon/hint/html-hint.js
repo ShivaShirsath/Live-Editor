@@ -15,11 +15,14 @@
   var targets = ["_blank", "_self", "_top", "_parent"];
   var charsets = ["ascii", "utf-8", "utf-16", "latin1", "latin1"];
   var methods = ["get", "post", "put", "delete"];
+  var alignment = ["center", "left", "right", "justify"];
   var encs = ["application/x-www-form-urlencoded", "multipart/form-data", "text/plain"];
   var media = ["all", "screen", "print", "embossed", "braille", "handheld", "print", "projection", "screen", "tty", "tv", "speech",
                "3d-glasses", "resolution [>][<][=] [X]", "device-aspect-ratio: X/Y", "orientation:portrait",
                "orientation:landscape", "device-height: [X]", "device-width: [X]"];
-  var s = { attrs: {} }; // Simple tag, reused for a whole lot of tags
+  var s = { attrs: {
+      align: alignment,
+  } }; // Simple tag, reused for a whole lot of tags
 
   var data = {
     a: {
@@ -27,7 +30,8 @@
         href: null, ping: null, type: null,
         media: media,
         target: targets,
-        hreflang: langs
+        hreflang: langs,
+        
       }
     },
     abbr: s,
@@ -194,6 +198,7 @@
     },
     map: { attrs: { name: null } },
     mark: s,
+    marquee: {attrs:{}},
     menu: { attrs: { label: null, type: ["list", "context", "toolbar"] } },
     meta: {
       attrs: {
