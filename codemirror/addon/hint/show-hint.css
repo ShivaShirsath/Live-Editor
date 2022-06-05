@@ -7,12 +7,10 @@
   margin: 0 0;
   padding: 1vmin 1vmin;
 
-  -webkit-box-shadow: 1vmin 1.5vmin 2vmin rgba(0, 255, 0, 0.2);
-  -moz-box-shadow: 1vmin 1.5vmin 2vmin rgba(0, 255, 0, 0.2);
-  box-shadow: 1vmin 1.5vmin 2vmin rgba(0, 255, 0, 0.2);
+  -webkit-box-shadow: 1vmin 1vmin 1vmin rgba(255, 127, 0, 0.2);
+     -moz-box-shadow: 1vmin 1vmin 1vmin rgba(255, 255, 255, 0.2);
+          box-shadow: 1vmin 1vmin 1vmin rgba(0, 255, 0, 0.2);
   border-radius: 2.5vmin;
-  
-  border: 0.2vmin dashed orange;
 
   background: white;
   font-size: 5vmin;
@@ -27,13 +25,13 @@
 }
 .CodeMirror-hint {
   margin: 0 0;
-  padding: 0.6vmin 0.6vmin;
+  padding: .6vmin .6vmin;
   border-radius: 2.5vmin;
   white-space: pre;
   color: black;
   cursor: pointer;
 }
-li.CodeMirror-hint-active {
+CodeMirror-hint-active {
   background: rgba(255, 127, 0, .5);
   color: white;
 }

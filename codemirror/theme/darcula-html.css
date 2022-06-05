@@ -121,7 +121,7 @@
 }
 
 .cm-s-darcula-html .CodeMirror-cursor {
-  border-left: .5vmin solid #a9b7c6;
+  border-left: .5vmin solid #ff8800aa;
 }
 
 .cm-s-darcula-html .CodeMirror-activeline-background {
@@ -152,16 +152,17 @@
 }
 
 .cm-s-darcula-html div.CodeMirror-selected {
-  background: #214283;
+  background: #ff880055;
+  border-radius: 1.5vmin;
 }
 
 .CodeMirror-hints.darcula-html {
   font-family: "Cutive Mono", monospace;
-  color: #9c9e9e;
-  background-color: #3b3e3f !important;
+  color: #0088ff !important;
+  background-color: #ff880022 !important;
 }
 
 .CodeMirror-hints.darcula-html .CodeMirror-hint-active {
-  background-color: #494d4e !important;
-  color: #9c9e9e !important;
+  background-color: #ff880044 !important;
+  color: #ff8800dd !important;
 }

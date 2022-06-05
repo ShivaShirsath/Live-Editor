@@ -12,19 +12,16 @@
 
 .CodeMirror-lines {
   padding: .8vmin 0;
-  /* Vertical padding around content */
 }
 
 .CodeMirror pre.CodeMirror-line,
 .CodeMirror pre.CodeMirror-line-like {
   padding: 0 .8vmin;
-  /* Horizontal padding of content */
 }
 
 .CodeMirror-scrollbar-filler,
 .CodeMirror-gutter-filler {
   background-color: white;
-  /* The little square between H and V scrollbars */
 }
 
 /* GUTTER */
@@ -79,17 +76,17 @@
 .cm-fat-cursor .CodeMirror-line::selection,
 .cm-fat-cursor .CodeMirror-line>span::selection,
 .cm-fat-cursor .CodeMirror-line>span>span::selection {
-  background: transparent;
+  /*background: transparent;*/
 }
 
 .cm-fat-cursor .CodeMirror-line::-moz-selection,
 .cm-fat-cursor .CodeMirror-line>span::-moz-selection,
 .cm-fat-cursor .CodeMirror-line>span>span::-moz-selection {
-  background: transparent;
+  /*background: transparent;*/
 }
 
 .cm-fat-cursor {
-  caret-color: transparent;
+  /*caret-color: transparent;*/
 }
 
 :is(@-moz-keyframes, @-webkit-keyframes, @keyframes) blink {
@@ -404,7 +401,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   color: inherit;
   z-index: 2;
   position: relative;
-  overflow: visible;
+  overflow: auto;
   -webkit-tap-highlight-color: transparent;
   -webkit-font-variant-ligatures: contextual;
   font-variant-ligatures: contextual;
@@ -449,8 +446,8 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
 .CodeMirror-gutter,
 .CodeMirror-gutters,
 .CodeMirror-linenumber {
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .CodeMirror-measure {
@@ -519,8 +516,6 @@ div.CodeMirror-dragcursors {
 }
 
 @media print {
-
-  /* Hide the cursor when printing */
   .CodeMirror div.CodeMirror-cursors {
     visibility: hidden;
   }
@@ -533,5 +528,5 @@ div.CodeMirror-dragcursors {
 
 /* Help users use markselection to safely style text background */
 span.CodeMirror-selectedtext {
-  background: none;
+  /*background: none;*/
 }
