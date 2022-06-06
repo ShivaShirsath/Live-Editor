@@ -93,23 +93,7 @@ view();
 function view() {
   let view = document.querySelector("iframe").contentWindow.document;
   view.open();
-  view.write(
-    "<style" +
-      ">" +
-      css.getValue() +
-      "</style" +
-      ">" +
-      "<body" +
-      ">" +
-      html.getValue() +
-      "</body" +
-      ">" +
-      "<script" +
-      ">" +
-      js.getValue() +
-      "</script" +
-      ">"
-  );
+  view.write(getCode());
 
   unDo(html);
   unDo(css);
@@ -141,6 +125,17 @@ function unDo(editor) {
       editor.undo();
     }
   }
+}
+
+function getCode(){
+  return "<html>\n\t<head>\n\t\t<title>on Live Editor</title>\n\t</head>\n\t<body>\n\t\t<sty" + "le>" + 
+    css.getValue() + 
+    "\n\t\t</sty" + "le>\n\t" +
+    html.getValue() +
+    "\n\t\t<scr" + "ipt>\n" +
+    js.getValue() +
+    "\n\t\t</scr" + "ipt>\n\t</body>\n</html>"
+  ;
 }
 
 function download(filename, text) {
@@ -197,13 +192,7 @@ function saveAction(code, comment, ex) {
   else if (confirm("Save All code ?")) {
     download(
       prompt("Download index file.", "index") + ".html",
-      "<html>\n\t<head>\n\t\t<title>Live Editor Presents</title>\n\t</head>\n\t<body>\n\t\t<style>" +
-        css.getValue() +
-        "\n\t\t</style>\n\t" +
-        html.getValue() +
-        "\n\t\t<script>\n" +
-        js.getValue() +
-        "\n\t\t</script>\n\t</body>\n</html>"
+      getCode()
     );
   } else
     download(
