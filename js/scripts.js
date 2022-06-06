@@ -99,7 +99,17 @@ view();
 function view() {
   let view = document.querySelector("iframe").contentWindow.document;
   view.open();
-  view.write(getCode());
+  view.write(
+    "<style" + ">" +
+      css.getValue() + 
+    "</style" + ">" +
+    "<body" + ">" +
+      html.getValue() +
+    "</body" + ">" +
+    "<script" + ">" +
+      js.getValue() +
+    "</script" + ">"
+  );
 
   unDo(html);
   unDo(css);
@@ -134,21 +144,7 @@ function unDo(editor) {
 }
 
 function getCode(){
-  return "<style" +
-      ">" +
-      css.getValue() +
-      "</style" +
-      ">" +
-      "<body" +
-      ">" +
-      html.getValue() +
-      "</body" +
-      ">" +
-      "<script" +
-      ">" +
-      js.getValue() +
-      "</script" +
-      ">"
+  return ""
   ;
 }
 
