@@ -64,6 +64,12 @@ js.setValue(
   "}"
 );
 
+if (document.cookie != null) {
+  html.setValue(document.cookie);
+  css.setValue("");
+  css.setValue("");
+}
+
 autoComplete(js);
 autoComplete(css);
 autoComplete(html);
@@ -128,13 +134,21 @@ function unDo(editor) {
 }
 
 function getCode(){
-  return "<html>\n\t<head>\n\t\t<title>on Live Editor</title>\n\t</head>\n\t<body>\n\t\t<sty" + "le>" + 
-    css.getValue() + 
-    "\n\t\t</sty" + "le>\n\t" +
-    html.getValue() +
-    "\n\t\t<scr" + "ipt>\n" +
-    js.getValue() +
-    "\n\t\t</scr" + "ipt>\n\t</body>\n</html>"
+  return "<style" +
+      ">" +
+      css.getValue() +
+      "</style" +
+      ">" +
+      "<body" +
+      ">" +
+      html.getValue() +
+      "</body" +
+      ">" +
+      "<script" +
+      ">" +
+      js.getValue() +
+      "</script" +
+      ">"
   ;
 }
 
