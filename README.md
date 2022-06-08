@@ -7,9 +7,7 @@ HTML, CSS, JavaScript
     ►
   </a>
   <br>
-  
   Click here
-
   <br>
   <a href=http://live-editor.42web.io>
     ⋅
