@@ -9,8 +9,8 @@
 }
 
 .cm-s-darcula-html.CodeMirror {
-  background: #000000;
-  color: #aaaaaa;
+  background: #00000000;
+  color: black;
 }
 
 .cm-s-darcula-html span.cm-meta {
@@ -50,7 +50,7 @@
 }
 
 .cm-s-darcula-html span.cm-property {
-  color: #ffc66d;
+  color: #ff8800;
 }
 
 .cm-s-darcula-html span.cm-operator {
@@ -83,7 +83,7 @@
 }
 
 .cm-s-darcula-html span.cm-tag {
-  color: #629755;
+  color: hsla(108, 50%, 35%, 1);
   font-weight: bold;
   font-style: italic;
 }
@@ -97,7 +97,7 @@
 }
 
 .cm-s-darcula-html span.cm-bracket {
-  color: #a9b7c6;
+  color: hsla(215, 50%, 70%, 1);
 }
 
 .cm-s-darcula-html span.cm-builtin {
@@ -129,8 +129,8 @@
 }
 
 .cm-s-darcula-html .CodeMirror-gutters {
-  background: rgba(190, 0, 0, 0.5);
-  border-right: .5vmin solid #883300;
+  background: hsla(0, 100%, 35%, 0.5);
+  border-right: .5vmin solid hsla(0, 80%, 40%, 0.5);
 }
 
 .cm-s-darcula-html .CodeMirror-guttermarker {
@@ -142,7 +142,7 @@
 }
 
 .cm-s-darcula-html .CodeMirrir-linenumber {
-  color: #606366;
+  color: #888888;
 }
 
 .cm-s-darcula-html .CodeMirror-matchingbracket {

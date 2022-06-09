@@ -513,7 +513,7 @@
     hint: CodeMirror.hint.auto,
     completeSingle: false,
     alignWithWord: true,
-    closeCharacters: /[\s()\[\]{};:>,]/,
+    closeCharacters: /{[\s()\[\]{};:>,]/,
     closeOnPick: true,
     closeOnUnfocus: true,
     updateOnCursorActivity: true,
