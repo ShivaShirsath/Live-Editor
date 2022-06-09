@@ -21,6 +21,7 @@ const css = CodeMirror(document.querySelector("#css"), {
   foldGutter: true,
   gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
 });
+
 const js = CodeMirror(document.querySelector("#js"), {
   lineNumbers: true,
   theme: "darcula-js",
@@ -32,6 +33,8 @@ const js = CodeMirror(document.querySelector("#js"), {
   foldGutter: true,
   gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
 });
+
+const output = document.querySelector("iframe");
 
 html.setValue(
   "<html>\n" +
@@ -67,7 +70,7 @@ js.setValue(
 if (document.cookie != null) {
   html.setValue(document.cookie);
   css.setValue("");
-  css.setValue("");
+  js.setValue("");
 }
 
 autoComplete(js);
@@ -77,8 +80,8 @@ autoComplete(html);
 function autoComplete(editor) {
   editor.on("keyup", 
     function(cm, e) {
-      if ([37, 38, 39, 40, 8, 13, 32 ].indexOf(e.keyCode) < 0 ) {
-        editor.execCommand("autocomplete");
+      if ([37, 38, 39, 40, 8, 13, 32 ].indexOf(e.keyCode) < 0) {
+        cm.execCommand("autocomplete");
       }
     }
   );
@@ -97,18 +100,10 @@ CodeMirror.commands.foldAll(js);
 view();
 
 function view() {
-  let view = document.querySelector("iframe").contentWindow.document;
+  let view = output.contentWindow.document;
   view.open();
   view.write(
-    "<style" + ">" +
-      css.getValue() + 
-    "</style" + ">" +
-    "<body" + ">" +
-      html.getValue() +
-    "</body" + ">" +
-    "<script" + ">" +
-      js.getValue() +
-    "</script" + ">"
+    getCode()
   );
 
   unDo(html);
@@ -116,6 +111,9 @@ function view() {
   unDo(js);
   
   if (!html.getValue().includes("<html")) {
+    if (html.getValue().includes("<body")) {
+      focusField(html, "body", html);
+    }
     if (html.getValue().includes("<style")) {
       focusField(html, "style", css);
     }
@@ -144,7 +142,15 @@ function unDo(editor) {
 }
 
 function getCode(){
-  return ""
+  return "<style" + ">" +
+      css.getValue() + 
+    "</style" + ">" +
+    "<body" + ">" +
+      html.getValue() +
+    "</body" + ">" +
+    "<script" + ">" +
+      js.getValue() +
+    "</script" + ">"
   ;
 }
 
