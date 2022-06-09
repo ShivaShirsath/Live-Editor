@@ -25,6 +25,7 @@ rotor {
   max-width: 99vw;
   height: 99vh;
   max-height: 99vh;
+  margin: .2vmin .2vmin;
 }
 
 iframe, code {

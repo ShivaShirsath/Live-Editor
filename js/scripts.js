@@ -80,7 +80,8 @@ autoComplete(html);
 function autoComplete(editor) {
   editor.on("keyup", 
     function(cm, e) {
-      if ([37, 38, 39, 40, 8, 13, 32 ].indexOf(e.keyCode) < 0) {
+      if ([8, 13, 32, 35, 36, 37, 38, 39, 40, 46, 219].indexOf(e.keyCode) < 0) {
+          acb(cm);
         cm.execCommand("autocomplete");
       }
     }
@@ -216,3 +217,35 @@ function saveAction(code, comment, ex) {
       code.getValue()
     );
 }
+
+function acb(editor) {
+    pos = editor.getCursor();
+    if("{" == editor.getLine(pos.line).substring(pos.ch-1, pos.ch)){
+       insertString(editor, "\n\t\n}"); 
+       editor.setCursor({line: pos.line+1, ch: "\t".lenght});
+    //editor.setValue(addStr(editor.getValue(), pos, "\n\t\n}"));
+    }
+}
+function addStr(str, index, sub){
+  return str.substring(0, index) + sub + str.substring(index, str.length);
+}
+
+function insertString(editor,str){
+
+        var selection = editor.getSelection();
+        if(selection.length>0){
+            editor.replaceSelection(str);
+        }
+        else{
+            var doc = editor.getDoc();
+            var cursor = doc.getCursor();
+            var pos = {
+               line: cursor.line,
+               ch: cursor.ch
+            };
+            doc.replaceRange(str, pos);
+
+        }
+
+    }
+
