@@ -3,11 +3,19 @@ const html = CodeMirror(document.querySelector("#html"), {
   theme: "darcula-html",
   tabSize: 2,
   mode: "htmlmixed",
-  extraKeys: { "Ctrl-Space": "autocomplete", "Ctrl-Q": function(cm){ cm.foldCode(cm.getCursor()); } },
+  extraKeys: { 
+    "Ctrl-Space": "autocomplete",
+    "Ctrl-Q": function(cm){
+      cm.foldCode(cm.getCursor()); 
+    }
+  },
   autoCloseTags: true,
   autoCloseBrackets: true,
   foldGutter: true,
-  gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
+  gutters: [
+    "CodeMirror-linenumbers",
+    "CodeMirror-foldgutter"
+  ]
 });
 
 const css = CodeMirror(document.querySelector("#css"), {
@@ -15,62 +23,50 @@ const css = CodeMirror(document.querySelector("#css"), {
   theme: "darcula-css",
   tabSize: 2,
   mode: "css",
-  extraKeys: { "Ctrl-Space": "autocomplete", "Ctrl-Q": function(cm){ cm.foldCode(cm.getCursor()); } },
+  extraKeys: { 
+    "Ctrl-Space": "autocomplete", 
+    "Ctrl-Q": function(cm){ 
+      cm.foldCode(cm.getCursor()); 
+    }
+  },
   autoCloseTags: true,
   autoCloseBrackets: true,
   foldGutter: true,
-  gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
+  gutters: [
+    "CodeMirror-linenumbers", 
+    "CodeMirror-foldgutter"
+  ]
 });
 
 const js = CodeMirror(document.querySelector("#js"), {
   lineNumbers: true,
   theme: "darcula-js",
   tabSize: 2,
-  extraKeys: { "Ctrl-Space": "autocomplete", "Ctrl-Q": function(cm){ cm.foldCode(cm.getCursor()); } },
-  mode: { name: "javascript", globalVars: true },
+  extraKeys: {
+    "Ctrl-Space": "autocomplete",
+    "Ctrl-Q": function(cm){ 
+      cm.foldCode(cm.getCursor());
+    }
+  },
+  mode: {
+    name: "javascript", 
+    globalVars: true
+  },
   autoCloseTags: true,
   autoCloseBrackets: true,
   foldGutter: true,
-  gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
+  gutters: [
+    "CodeMirror-linenumbers",
+    "CodeMirror-foldgutter"
+  ]
 });
 
 const output = document.querySelector("iframe");
 
-html.setValue(
-  "<html>\n" +
-  "\t<head>\n" +
-  "\t\t<title>\n" +
-  "\t\t\tMy Website\n" +
-  "\t\t</title>\n" +
-  "\t</head>\n" +
-  "\t<body>\n"+
-  "\t\t<h1 align=center>Welcome to my WebSite</h1>" +
-  "\t</body>\n" +
-  "</html>"
-);
-
-css.setValue(
-  "*{\n" + 
-  "\tpadding: 0 0;\n" + 
-  "\tmargin: 0 0;\n" +
-  "}" + "\n" +
-  "h1 {" + "\n" +
-  "\tcolor: orange;\n" +
-  "}"
-);
-
-js.setValue(
-  "function callMe(){\n" +
-  "\talert(\n" +
-  "\t\t'Hi, i am alert !'\n" +
-  "\t);\n" +
-  "}"
-);
-
 if (document.cookie != null) {
-  html.setValue(document.cookie);
   css.setValue("");
   js.setValue("");
+  html.setValue(document.cookie);
 }
 
 autoComplete(js);
@@ -80,9 +76,8 @@ autoComplete(html);
 function autoComplete(editor) {
   editor.on("keyup", 
     function(cm, e) {
-      if ([8, 13, 32, 35, 36, 37, 38, 39, 40, 46, 219].indexOf(e.keyCode) < 0) {
-          acb(cm);
-        cm.execCommand("autocomplete");
+      if ((! e.shiftKey) && [8, 13, 32, 35, 36, 37, 38, 39, 40, 46, 219].indexOf(e.keyCode) < 0) {
+        if (acb(cm)) cm.execCommand("autocomplete"); 
       }
     }
   );
@@ -221,31 +216,28 @@ function saveAction(code, comment, ex) {
 function acb(editor) {
     pos = editor.getCursor();
     if("{" == editor.getLine(pos.line).substring(pos.ch-1, pos.ch)){
-       insertString(editor, "\n\t\n}"); 
-       editor.setCursor({line: pos.line+1, ch: "\t".lenght});
-    //editor.setValue(addStr(editor.getValue(), pos, "\n\t\n}"));
+       insertString(editor, "}"); 
+       editor.setCursor({line: pos.line, ch: pos.ch});
+       return false;
     }
+    return true;
 }
+
 function addStr(str, index, sub){
   return str.substring(0, index) + sub + str.substring(index, str.length);
 }
 
 function insertString(editor,str){
-
-        var selection = editor.getSelection();
-        if(selection.length>0){
-            editor.replaceSelection(str);
-        }
-        else{
-            var doc = editor.getDoc();
-            var cursor = doc.getCursor();
-            var pos = {
-               line: cursor.line,
-               ch: cursor.ch
-            };
-            doc.replaceRange(str, pos);
-
-        }
-
-    }
-
+  var selection = editor.getSelection();
+  if(selection.length>0){
+    editor.replaceSelection(str);
+  } else {
+    var doc = editor.getDoc();
+    var cursor = doc.getCursor();
+    var pos = {
+      line: cursor.line,
+      ch: cursor.ch
+    };
+    doc.replaceRange(str, pos);
+  }
+}
