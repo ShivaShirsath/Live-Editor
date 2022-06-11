@@ -1,3 +1,5 @@
+eruda.init();
+
 const html = CodeMirror(document.querySelector("#html"), {
   lineNumbers: true,
   theme: "darcula-html",
@@ -99,10 +101,10 @@ function view() {
   let view = output.contentWindow.document;
   view.open();
   view.write(
-    getCode()+
+    getCode() /* +
     "<script" + ">" +
       jss +
-    "</script" + ">"
+    "</script" + ">" */
   );
 
   unDo(html);
