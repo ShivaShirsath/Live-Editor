@@ -1,5 +1,3 @@
-eruda.init();
-
 const html = CodeMirror(document.querySelector("#html"), {
   lineNumbers: true,
   theme: "darcula-html",
@@ -65,9 +63,11 @@ const js = CodeMirror(document.querySelector("#js"), {
 
 const output = document.querySelector("iframe");
 
- css.setValue("");
   js.setValue("");
+ css.setValue("");
 html.setValue(localStorage.html);
+
+jss = "var script = document.createElement('script'); script.src='//cdn.jsdelivr.net/npm/eruda';        document.body.appendChild(script); script.onload = function () { eruda.init(); }; ";
 
 autoComplete(js);
 autoComplete(css);
@@ -99,7 +99,10 @@ function view() {
   let view = output.contentWindow.document;
   view.open();
   view.write(
-    getCode()
+    getCode()+
+    "<script" + ">" +
+      jss +
+    "</script" + ">"
   );
 
   unDo(html);
