@@ -1,3 +1,5 @@
+eruda.init();
+
 const html = CodeMirror(document.querySelector("#html"), {
   lineNumbers: true,
   theme: "darcula-html",
@@ -63,11 +65,9 @@ const js = CodeMirror(document.querySelector("#js"), {
 
 const output = document.querySelector("iframe");
 
-if (document.cookie != null) {
-  css.setValue("");
+ css.setValue("");
   js.setValue("");
-  html.setValue(document.cookie);
-}
+html.setValue(localStorage.html);
 
 autoComplete(js);
 autoComplete(css);
@@ -107,26 +107,16 @@ function view() {
   unDo(js);
   
   if (!html.getValue().includes("<html")) {
-    if (html.getValue().includes("<body")) {
-      focusField(html, "body", html);
-    }
-    if (html.getValue().includes("<style")) {
-      focusField(html, "style", css);
-    }
-    if (html.getValue().includes("<script")) {
-      focusField(html, "script", js);
-    }
+    if (html.getValue().includes(  "<body")) focusField(html, "body", html);
+    if (html.getValue().includes( "<style")) focusField(html, "style", css);
+    if (html.getValue().includes("<script")) focusField(html, "script", js);
   }
-  if (html.getValue().includes("<!-- save -->")) {
-    saveAction(html, "<!-- save -->", "html");
-  }
-  if (css.getValue().includes("/* save */")) {
-    saveAction(css, "/* save */", "css");
-  }
-  if (js.getValue().includes("// save //")) {
-    saveAction(js, "// save //", "js");
-  }
+  
+  if (html.getValue().includes("<!-- save -->")) saveAction(html, "<!-- save -->");
+  
   view.close();
+  
+  localStorage.setItem("html", getCode());
 }
 
 function unDo(editor) {
@@ -138,7 +128,7 @@ function unDo(editor) {
 }
 
 function getCode(){
-  return "<style" + ">" +
+  return "<style" + ">\n" +
       css.getValue() + 
     "</style" + ">" +
     "<body" + ">" +
@@ -184,8 +174,8 @@ function focusField(ele, tag, target) {
   target.focus();
 }
 
-function saveAction(code, comment, ex) {
-  code.setValue(code.getValue().replace(comment, ""));
+function saveAction(editor, comment) {
+  editor.setValue(editor.getValue().replace(comment, ""));
   if (
     confirm("Do you want to upload files to server ?\n( 'Cancel' for download")
   )
@@ -201,16 +191,10 @@ function saveAction(code, comment, ex) {
     }).done(function (response) {
       alert(response);
     });
-  else if (confirm("Save All code ?")) {
-    download(
-      prompt("Download index file.", "index") + ".html",
-      getCode()
-    );
-  } else
-    download(
-      prompt("Download " + ex + " file.", ex) + "." + ex,
-      code.getValue()
-    );
+  else download(
+    prompt("Download index file.", "index") + ".html",
+    getCode()
+  );
 }
 
 function acb(editor) {
@@ -221,10 +205,6 @@ function acb(editor) {
        return false;
     }
     return true;
-}
-
-function addStr(str, index, sub){
-  return str.substring(0, index) + sub + str.substring(index, str.length);
 }
 
 function insertString(editor,str){

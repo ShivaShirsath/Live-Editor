@@ -1,12 +1,9 @@
 .CodeMirror-foldmarker{
   color: orange;
-  padding-left: 1vmin;
-  font-family: arial;
-  line-height: .3;
   cursor: pointer;
 }
 .CodeMirror-foldgutter {
-  width: .7em;
+  width: .5em;
 }
 .CodeMirror-foldgutter-open,
 .CodeMirror-foldgutter-folded {
