@@ -1,5 +1,3 @@
-eruda.init();
-
 const html = CodeMirror(document.querySelector("#html"), {
   lineNumbers: true,
   theme: "darcula-html",
@@ -118,7 +116,7 @@ function view() {
   }
   
   if (html.getValue().includes("<!-- save -->")) saveAction(html, "<!-- save -->");
-  
+  if (html.getValue().includes("<!-- inspect -->")) eruda.init();
   view.close();
   
   localStorage.setItem("html", getCode());
