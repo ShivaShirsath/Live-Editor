@@ -128,7 +128,7 @@ function unDo(editor) {
 }
 
 function getCode(){
-  return "<style" + ">\n" +
+  return "<style" + ">" +
       css.getValue() + 
     "</style" + ">" +
     "<body" + ">" +
