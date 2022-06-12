@@ -1,3 +1,12 @@
+eruda.init();
+
+localStorage.setItem("eruda-sources", '{"showLineNum":true,"formatCode":true,"indentSize":"2"}');
+localStorage.setItem("eruda-entry-button", '{"rememberPos":true,"pos":{"x":0,"y":0}}');
+localStorage.setItem("eruda-resources", '{"hideErudaSetting":true,"observeElement":true}');
+localStorage.setItem("eruda-console", '{"asyncRender":true,"catchGlobalErr":true,"jsExecution":true,"overrideConsole":true,"displayExtraInfo":true,"displayUnenumerable":true,"displayGetterVal":true,"lazyEvaluation":true,"displayIfErr":true');
+localStorage.setItem("eruda-dev-tools", '{"transparency":0.95,"displaySize":50,"theme":"Material Darker"}');
+localStorage.setItem("eruda-elements", '{"overrideEventTarget":true,"observeElement":true}');
+
 const html = CodeMirror(document.querySelector("#html"), {
   lineNumbers: true,
   theme: "darcula-html",
@@ -116,7 +125,7 @@ function view() {
   }
   
   if (html.getValue().includes("<!-- save -->")) saveAction(html, "<!-- save -->");
-  if (html.getValue().includes("<!-- inspect -->")) eruda.init();
+  
   view.close();
   
   localStorage.setItem("html", getCode());
