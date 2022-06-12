@@ -31,6 +31,12 @@ function createEditor(which, m) {
   });
 }
 
+const output = document.querySelector("iframe");
+
+  js.setValue("");
+ css.setValue("");
+html.setValue(localStorage.html);
+
 autoComplete(js);
 autoComplete(css);
 autoComplete(html);
