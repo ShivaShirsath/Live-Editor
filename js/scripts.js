@@ -82,7 +82,7 @@ function autoComplete(editor) {
   editor.on("keyup", 
     function(cm, e) {
       if ((! e.shiftKey) && [8, 13, 32, 35, 36, 37, 38, 39, 40, 46, 219].indexOf(e.keyCode) < 0) {
-        if (acb(cm)) cm.execCommand("autocomplete"); 
+        /* if (acb(cm)) */ cm.execCommand("autocomplete"); 
       }
     }
   );
