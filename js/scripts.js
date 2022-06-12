@@ -1,5 +1,3 @@
-eruda.init();
-
 localStorage.setItem("eruda-sources", '{"showLineNum":true,"formatCode":true,"indentSize":"2"}');
 localStorage.setItem("eruda-entry-button", '{"rememberPos":true,"pos":{"x":0,"y":0}}');
 localStorage.setItem("eruda-resources", '{"hideErudaSetting":true,"observeElement":true}');
@@ -108,10 +106,7 @@ function view() {
   let view = output.contentWindow.document;
   view.open();
   view.write(
-    getCode() /* +
-    "<script" + ">" +
-      jss +
-    "</script" + ">" */
+    getCode()
   );
 
   unDo(html);
@@ -125,6 +120,7 @@ function view() {
   }
   
   if (html.getValue().includes("<!-- save -->")) saveAction(html, "<!-- save -->");
+  if (html.getValue().includes("<!-- inspect -->")) eruda.init();
   
   view.close();
   
