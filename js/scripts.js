@@ -122,7 +122,9 @@ function view() {
   }
   
   if (html.getValue().includes("<!-- save -->")) saveAction(html, "<!-- save -->");
-  if (html.getValue().includes("<!-- inspect -->")) jss = "var script = document.createElement('script'); script.src='//cdn.jsdelivr.net/npm/eruda';        document.body.appendChild(script); script.onload = function () { eruda.init(); }; ";
+  if (html.getValue().includes("<!-- inspect -->"))
+    jss = "var script = document.createElement('script'); script.src='//cdn.jsdelivr.net/npm/eruda';        document.body.appendChild(script); script.onload = function () { eruda.init(); }; ";
+  else jss = "";
   
   view.close();
   
