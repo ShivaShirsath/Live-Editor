@@ -101,14 +101,7 @@ CodeMirror.commands.foldAll(js);
 view();
 
 function view() {
-  let view = output.contentWindow.document;
-  view.open();
-  view.write(
-    getCode() + "<script" + ">" +
-      inspector() +
-    "</script" + ">"
-  );
-
+  
   unDo(html);
   unDo(css);
   unDo(js);
@@ -121,6 +114,13 @@ function view() {
   
   if (html.getValue().includes("<!-- save -->")) saveAction(html, "<!-- save -->");
   
+  let view = output.contentWindow.document;
+  view.open();
+  view.write(
+    getCode() + "<script" + ">" +
+      inspector() +
+    "</script" + ">"
+  );
   view.close();
   
   localStorage.setItem("html", getCode());
