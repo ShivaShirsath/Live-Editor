@@ -5,74 +5,31 @@ localStorage.setItem("eruda-console", '{"asyncRender":true,"catchGlobalErr":true
 localStorage.setItem("eruda-dev-tools", '{"transparency":0.95,"displaySize":50,"theme":"Material Darker"}');
 localStorage.setItem("eruda-elements", '{"overrideEventTarget":true,"observeElement":true}');
 
-const html = CodeMirror(document.querySelector("#html"), {
-  lineNumbers: true,
-  theme: "darcula-html",
-  tabSize: 2,
-  mode: "htmlmixed",
-  extraKeys: { 
-    "Ctrl-Space": "autocomplete",
-    "Ctrl-Q": function(cm){
-      cm.foldCode(cm.getCursor()); 
-    }
-  },
-  autoCloseTags: true,
-  autoCloseBrackets: true,
-  foldGutter: true,
-  gutters: [
-    "CodeMirror-linenumbers",
-    "CodeMirror-foldgutter"
-  ]
-});
-
-const css = CodeMirror(document.querySelector("#css"), {
-  lineNumbers: true,
-  theme: "darcula-css",
-  tabSize: 2,
-  mode: "css",
-  extraKeys: { 
-    "Ctrl-Space": "autocomplete", 
-    "Ctrl-Q": function(cm){ 
-      cm.foldCode(cm.getCursor()); 
-    }
-  },
-  autoCloseTags: true,
-  autoCloseBrackets: true,
-  foldGutter: true,
-  gutters: [
-    "CodeMirror-linenumbers", 
-    "CodeMirror-foldgutter"
-  ]
-});
-
-const js = CodeMirror(document.querySelector("#js"), {
-  lineNumbers: true,
-  theme: "darcula-js",
-  tabSize: 2,
-  extraKeys: {
-    "Ctrl-Space": "autocomplete",
-    "Ctrl-Q": function(cm){ 
-      cm.foldCode(cm.getCursor());
-    }
-  },
-  mode: {
-    name: "javascript", 
-    globalVars: true
-  },
-  autoCloseTags: true,
-  autoCloseBrackets: true,
-  foldGutter: true,
-  gutters: [
-    "CodeMirror-linenumbers",
-    "CodeMirror-foldgutter"
-  ]
-});
-
-const output = document.querySelector("iframe");
-
-  js.setValue("");
- css.setValue("");
-html.setValue(localStorage.html);
+const html = createEditor("html", "htmlmixed");
+const css = createEditor("css", "css");
+const js = createEditor("js", { name: "javascript", globalVars: true });
+  
+function createEditor(which, m) {
+  return CodeMirror(document.querySelector("#" + which), {
+    lineNumbers: true,
+    theme: "darcula-" + which,
+    tabSize: 2,
+    mode: m,
+    extraKeys: { 
+      "Ctrl-Space": "autocomplete",
+      "Ctrl-Q": function(cm){
+        cm.foldCode(cm.getCursor()); 
+      }
+    },
+    autoCloseTags: true,
+    autoCloseBrackets: true,
+    foldGutter: true,
+    gutters: [
+      "CodeMirror-linenumbers",
+      "CodeMirror-foldgutter"
+    ]
+  });
+}
 
 autoComplete(js);
 autoComplete(css);
