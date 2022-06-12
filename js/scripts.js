@@ -74,7 +74,7 @@ const output = document.querySelector("iframe");
  css.setValue("");
 html.setValue(localStorage.html);
 
-jss = "var script = document.createElement('script'); script.src='//cdn.jsdelivr.net/npm/eruda';        document.body.appendChild(script); script.onload = function () { eruda.init(); }; ";
+jss = "";
 
 autoComplete(js);
 autoComplete(css);
@@ -106,7 +106,9 @@ function view() {
   let view = output.contentWindow.document;
   view.open();
   view.write(
-    getCode()
+    getCode() + "<script" + ">" +
+      jss +
+    "</script" + ">"
   );
 
   unDo(html);
@@ -120,7 +122,7 @@ function view() {
   }
   
   if (html.getValue().includes("<!-- save -->")) saveAction(html, "<!-- save -->");
-  if (html.getValue().includes("<!-- inspect -->")) eruda.init();
+  if (html.getValue().includes("<!-- inspect -->")) jss = "var script = document.createElement('script'); script.src='//cdn.jsdelivr.net/npm/eruda';        document.body.appendChild(script); script.onload = function () { eruda.init(); }; ";
   
   view.close();
   
